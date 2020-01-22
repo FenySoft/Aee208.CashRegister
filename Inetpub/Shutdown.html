@@ -9,6 +9,7 @@
 	<h1>Pénztárgép és az AEE leállítása</h1>
 	<br />
 	<form method="post" action="Shutdown" enctype="multipart/form-data">
+	<input type="hidden" name="SessionId" value="{SessionId.Value}"/>
 	Tanúsítvány: <input type="file" name="UserCertificate" size="30" />
 	<br />	
 	PIN: <input type="text" name="Pin" size="30" />
