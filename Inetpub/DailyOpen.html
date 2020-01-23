@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Napnyitás</title>
+  </head>
+  <body bgcolor="#FFFFFF">
+    <center>
+      <h1>Napnyitás</h1>
+      <br />
+      <form method="post" action="DailyOpen">
+        <input type="hidden" name="SessionId" value="{SessionId.Value}"/>
+        <br />
+        <input placeholder="Nyitó összeg" type="text" name="Payments.Payment[0].Amount" size="10" />
+        <select name="Payments.Payment[0].PaymentMediaIndex">
+          <option value="0">Ft</option>
+          <option value="1">€</option>
+          <option value="2">$</option>
+        </select>
+        <br />
+        <input placeholder="Nyitó összeg" type="text" name="Payments.Payment[1].Amount" size="10" />
+        <select name="Payments.Payment[1].PaymentMediaIndex">
+          <option value="-1">-</option>
+          <option value="0">Ft</option>
+          <option value="1">€</option>
+          <option value="2">$</option>
+        </select>
+        <br />
+        <input placeholder="Pénztáros neve" type="text" name="ClerkName" size="30" />
+        <br />
+        <input placeholder="Pénztáros kód" type="text" name="ClerckCode" size="30" />
+        <br />
+        <input type="hidden" name="DocumentGeneral.Barcode" value="auto" />
+        <input type="hidden" name="DocumentGeneral.CopyCount" value="1" />
+        <br />
+        <input type="submit" value="Napnyitás" name="DailyOpenCommand" />
+      </form>
+    </center>
+  </body>
+</html>
