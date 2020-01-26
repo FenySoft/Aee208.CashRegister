@@ -1,53 +1,51 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8">
     <title>Napnyitás</title>
   </head>
   <body bgcolor="#FFFFFF">
-    <center>
-      <h1>Napnyitás</h1>
-      <br />
-      <form method="post" action="DailyOpen">
-        <input type="hidden" name="SessionId" value="{SessionId}"/>
-        <button type="button" onclick="RowAppend('#RowTemplate')">Új fizetőeszköz hozzáadása</button>
-        <div id="rows">
-        </div>
+    <h1>Napnyitás</h1>
+    <br />
+    <form method="post" action="DailyOpen">
+      <input type="hidden" name="SessionId" value="{SessionId}"/>
+      <button type="button" onclick="RowAppend('#RowTemplate')">Új fizetőeszköz hozzáadása</button>
+      <div id="rows">
+      </div>
+      <div>
+      <input placeholder="Pénztáros neve" type="text" name="ClerkName" size="30" />
+      </div>
+      <div>
+      <input placeholder="Pénztáros kód" type="text" name="ClerckCode" size="30" />
+      </div>
+      <input type="hidden" name="DocumentGeneral.Barcode" value="auto" />
+      <input type="hidden" name="DocumentGeneral.CopyCount" value="1" />
+      <button type="submit" accesskey="n" >Napnyitás</button>
+      
+      <script id="RowTemplate" type="text/html">
         <div>
-        <input placeholder="Pénztáros neve" type="text" name="ClerkName" size="30" />
+          <input placeholder="Nyitó összeg" type="text" name="Payments[RowIndex].Amount"/>
+          <select name="Payments[RowIndex].PaymentMediaIndex">
+            <option value="-1">-</option>
+            <option value="0">Ft</option>
+            <option value="1">€</option>
+            <option value="2">$</option>
+          </select>
+          <button type="button" onclick="this.parentNode.remove();">Törlés</button>
         </div>
-        <div>
-        <input placeholder="Pénztáros kód" type="text" name="ClerckCode" size="30" />
-        </div>
-        <input type="hidden" name="DocumentGeneral.Barcode" value="auto" />
-        <input type="hidden" name="DocumentGeneral.CopyCount" value="1" />
-        <button type="submit" accesskey="n" >Napnyitás</button>
-        
-        <script id="RowTemplate" type="text/html">
-          <div>
-            <input placeholder="Nyitó összeg" type="text" name="Payments[RowIndex].Amount"/>
-            <select name="Payments[RowIndex].PaymentMediaIndex">
-              <option value="-1">-</option>
-              <option value="0">Ft</option>
-              <option value="1">€</option>
-              <option value="2">$</option>
-            </select>
-            <button type="button" onclick="this.parentNode.remove();">Törlés</button>
-          </div>
-        </script>
+      </script>
 
-        <script>
-          let i = 0;
-          function RowAppend(ARowTemplate)
-          {
-            let str = document.querySelector(ARowTemplate).innerHTML;
-            let newstr = str.split("RowIndex").join(i++);
-            document.querySelector('#rows').insertAdjacentHTML( 'beforeend', newstr );
-          }
-          
-          RowAppend('#RowTemplate');
-        </script>
-      </form>
-    </center>
+      <script>
+        let i = 0;
+        function RowAppend(ARowTemplate)
+        {
+          let str = document.querySelector(ARowTemplate).innerHTML;
+          let newstr = str.split("RowIndex").join(i++);
+          document.querySelector('#rows').insertAdjacentHTML( 'beforeend', newstr );
+        }
+        
+        RowAppend('#RowTemplate');
+      </script>
+    </form>
   </body>
 </html>

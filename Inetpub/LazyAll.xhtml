@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Értékesítési bizonylat</title>
+  </head>
+  <body>
+    <h1>Értékesítési bizonylat</h1>
+    <form method="post" action="LazyOpen">
+      <input type="hidden" name="SessionId" value="{SessionId}" required="required" />
+      <input placeholder="LazyId" type="number" name="LazyId" min="1" />
+      <button type="submit">Értékesítési bizonylat nyitás</button>
+    </form>
+    <form method="post" action="SellItem">
+      <input type="hidden" name="SessionId" value="{SessionId}"/>
+      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <input type="hidden" name="ItemIndex" value="{ItemIndex}" />
+			<div>
+      <input placeholder="Termék kód" type="text" name="ProductCode" />
+      <input placeholder="Termék neve" type="text" name="ProductName" required="required" />
+      <input placeholder="Egységár" type="number" name="Gup" min="0" step="0.01" required="required" />
+      <input placeholder="Egység" type="text" name="UnitName" required="required" />
+      <input placeholder="Mennyiség" type="number" name="Qty" step="0.01" required="required" />
+      <input placeholder="Összeg" type="number" name="Gp" step="0.01" required="required" />
+      <button type="submit">Tétel eladás</button>
+			</div>
+			<div>
+			</div>
+    </form>
+    <form method="post" action="SubTotal">
+      <input type="hidden" name="SessionId" value="{SessionId}"/>
+      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <button type="submit">Részösszen</button>
+    </form>
+    <form method="post" action="Total">
+      <input type="hidden" name="SessionId" value="{SessionId}"/>
+      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <button type="submit">Összen</button>
+    </form>
+    <form method="post" action="Total">
+      <input type="hidden" name="SessionId" value="{SessionId}"/>
+      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <button type="submit">Nyugta</button>
+    </form>
+    <form method="post" action="Total">
+      <input type="hidden" name="SessionId" value="{SessionId}"/>
+      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <button type="submit">Számla</button>
+    </form>
+  </body>
+</html>
