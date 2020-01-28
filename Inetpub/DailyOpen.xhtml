@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Napnyitás</title>
   </head>
-  <body bgcolor="#FFFFFF">
+  <body>
     <h1>Napnyitás</h1>
     <br />
     <form method="post" action="DailyOpen">
@@ -27,9 +27,9 @@
           <input placeholder="Nyitó összeg" type="text" name="Payments[RowIndex].Amount"/>
           <select name="Payments[RowIndex].PaymentMediaIndex">
             <option value="-1">-</option>
-            <option value="0">Ft</option>
-            <option value="1">€</option>
-            <option value="2">$</option>
+            <option value="0">Készpénz Ft</option>
+            <option value="1">Készpénz €</option>
+            <option value="2">Készpénz $</option>
           </select>
           <button type="button" onclick="this.parentNode.remove();">Törlés</button>
         </div>

@@ -6,43 +6,106 @@
   </head>
   <body>
     <h1>Értékesítési bizonylat</h1>
-    <form method="post" action="LazyOpen">
+    <form method="post" action="LazyOpen" background="" >
       <input type="hidden" name="SessionId" value="{SessionId}" required="required" />
       <input placeholder="LazyId" type="number" name="LazyId" min="1" />
-      <button type="submit">Értékesítési bizonylat nyitás</button>
+			<select name="LazyGroup" required="required" >
+				<option value="0">Nyugta vagy számla</option>
+				<option value="1">Sztornó bizonylat</option>
+				<option value="2">Visszáru bizonylat</option>
+				<option value="3">Gönygöleg jegy</option>
+				<option value="4">Összesítő</option>
+			</select>
+      <button type="submit">Nyitás</button>
     </form>
+		<p />
     <form method="post" action="SellItem">
-      <input type="hidden" name="SessionId" value="{SessionId}"/>
-      <input type="hidden" name="LazyId" value="{LazyId}" />
-      <input type="hidden" name="ItemIndex" value="{ItemIndex}" />
-			<div>
-      <input placeholder="Termék kód" type="text" name="ProductCode" />
-      <input placeholder="Termék neve" type="text" name="ProductName" required="required" />
-      <input placeholder="Egységár" type="number" name="Gup" min="0" step="0.01" required="required" />
-      <input placeholder="Egység" type="text" name="UnitName" required="required" />
-      <input placeholder="Mennyiség" type="number" name="Qty" step="0.01" required="required" />
-      <input placeholder="Összeg" type="number" name="Gp" step="0.01" required="required" />
-      <button type="submit">Tétel eladás</button>
-			</div>
-			<div>
-			</div>
+      <input type="hidden" name="SessionId" value="{SessionId}" required="required" />
+      <input type="hidden" name="LazyId" value="{LazyId}" required="required" />
+      <!--input type="hidden" name="ItemIndex" value="{ItemIndex}" /-->
+      <div>
+				<input placeholder="Termék neve" type="text" name="ProductName" required="required" />
+				<input placeholder="Egységár" type="number" name="Gup" min="0" step="0.01" required="required" />
+				<input placeholder="Egység" type="text" name="UnitName" required="required" />
+				<input placeholder="Mennyiség" type="number" name="Qty" step="0.01" required="required" />
+				<input placeholder="Összeg" type="number" name="Gp" step="0.01" required="required" />
+				<select name="VatCode" required="required" >
+					<option value="A00">A00</option>
+					<option value="B00">B00</option>
+					<option value="C00">C00</option>
+					<option value="D00">D00</option>
+					<option value="E00">E00</option>
+        </select>
+				<button type="submit">Tétel eladás</button>
+      </div>
+      <div>
+        <input placeholder="Termék kód" type="text" name="ProductCode" />
+        <input placeholder="Termék kód" type="text" name="ProductCode" />
+        <input placeholder="Termék kód" type="text" name="ProductCode" />
+        <input placeholder="Termék kód" type="text" name="ProductCode" />
+      </div>
     </form>
+		<p />
     <form method="post" action="SubTotal">
-      <input type="hidden" name="SessionId" value="{SessionId}"/>
-      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <input type="hidden" name="SessionId" value="{SessionId}" required="required" />
+      <input type="hidden" name="LazyId" value="{LazyId}" required="required" />
       <button type="submit">Részösszen</button>
     </form>
+		<p />
     <form method="post" action="Total">
-      <input type="hidden" name="SessionId" value="{SessionId}"/>
-      <input type="hidden" name="LazyId" value="{LazyId}" />
+      <input type="hidden" name="SessionId" value="{SessionId}" required="required" />
+      <input type="hidden" name="LazyId" value="{LazyId}" required="required" />
       <button type="submit">Összen</button>
     </form>
-    <form method="post" action="Total">
-      <input type="hidden" name="SessionId" value="{SessionId}"/>
-      <input type="hidden" name="LazyId" value="{LazyId}" />
+		<p />
+    <form method="post" action="LazyToReceipt" style="background-color:#EFEFEF" >
+      <input type="hidden" name="SessionId" value="{SessionId}" required="required" />
+      <input type="hidden" name="LazyId" value="{LazyId}" required="required" />
+      <input type="hidden" name="DocumentGeneral.Barcode" value="auto" />
+      <input type="hidden" name="DocumentGeneral.CopyCount" value="1" />
+      <div id="rows">
+      </div>
+			<div>
+        <button type="button" onclick="RowAppend('#RowTemplate')">Új fizetőeszköz hozzáadása</button>
+			</div>
+      <script id="RowTemplate" type="text/html">
+        <div>
+          <input placeholder="Fizetett összeg" type="text" name="Payments[RowIndex].Amount"/>
+          <select name="Payments[RowIndex].PaymentMediaIndex">
+            <option value="-1">-</option>
+            <option value="0">Készpénz Ft</option>
+            <option value="1">Készpénz €</option>
+            <option value="2">Készpénz $</option>
+            <option value="3">Bankkártya</option>
+          </select>
+          <button type="button" onclick="this.parentNode.remove();">Törlés</button>
+        </div>
+      </script>
+
+      <script>
+        let i = 0;
+        function RowAppend(ARowTemplate)
+        {
+          let str = document.querySelector(ARowTemplate).innerHTML;
+          let newstr = str.split("RowIndex").join(i++);
+          document.querySelector('#rows').insertAdjacentHTML( 'beforeend', newstr );
+        }
+        
+        RowAppend('#RowTemplate');
+      </script>
+			<div>
+				<select name="CloseMethod" required="required" >
+					<option value="0">Zárás</option>
+					<option value="1">Megszakítás</option>
+					<option value="2">Törlés</option>
+				</select>
+			</div>
+			<div>
       <button type="submit">Nyugta</button>
+			</div>
     </form>
-    <form method="post" action="Total">
+		<p />
+    <form method="post" action="LazyToInvoice">
       <input type="hidden" name="SessionId" value="{SessionId}"/>
       <input type="hidden" name="LazyId" value="{LazyId}" />
       <button type="submit">Számla</button>
