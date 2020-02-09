@@ -10,77 +10,10 @@
 			"name": "JSON response",
 			"item": [
 				{
-					"name": "AEE",
+					"name": "Develop",
 					"item": [
 						{
-							"name": "GetAeeInfo - Response JSON",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://{{AEE208}}/GetAeeInfo",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"GetAeeInfo"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "GetAeeInfo",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://{{AEE208}}/GetAeeInfo",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"GetAeeInfo"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "2068"
-										}
-									],
-									"cookie": [],
-									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeInfo\",\r\n  \"Result\": {\r\n    \"DeviceName\": \"AEE208 Develop\",\r\n    \"HardwareVersion\": \"V0001\",\r\n    \"HardwareManufacturer\": \"Com-Passz Kft.\",\r\n    \"SoftwareVersion\": \"V0032\",\r\n    \"SoftwareSha256\": \"9186DD5C433EF5E720BBE106E1287EC3BABCEDAEF165F6C6F21D0BDC18933849\",\r\n    \"SoftwareUpdateDT\": \"2020-02-07T14:02:49\",\r\n    \"SoftwareManufacturer\": \"Com-Passz Kft.\",\r\n    \"SerialNumber\": \"02407461\",\r\n    \"GsmDeviceName\": \"SIMCOM_SIM5320E\",\r\n    \"GsmSoftwareVersion\": \"1575B12SIM5320E\",\r\n    \"GsmImei\": \"861311000351568\",\r\n    \"GsmImsi\": \"240080000789950\",\r\n    \"CashRegisterName\": null,\r\n    \"CashRegisterHardwareVersion\": null,\r\n    \"CashRegisterSoftwareVersion\": null,\r\n    \"CashRegisterSoftwareSha256\": null,\r\n    \"ActivationCode\": null,\r\n    \"ApNumber\": \"A00000000\",\r\n    \"PkiRequired\": false,\r\n    \"ConditionalInfo\": \"<TAeeConditional>AeeDevelop, AeeMono, AeeGsmOn, AeeStoreTest, </TAeeConditional><TIOsConditional>Slave, </TIOsConditional>\",\r\n    \"BatterySerialNumber\": \"-\",\r\n    \"IIssuer\": {\r\n      \"TaxNumber\": \"\",\r\n      \"Name\": \"\",\r\n      \"PostalCode\": \"\",\r\n      \"City\": \"\",\r\n      \"PlaceName\": \"\",\r\n      \"PlaceType\": \"\",\r\n      \"HouseNumber\": \"\",\r\n      \"Address\": \"    \"\r\n    }\r\n    \"IIssuerA\": {\r\n      \"TaxNumber\": \"\",\r\n      \"Name\": \"\",\r\n      \"PostalCode\": \"\",\r\n      \"City\": \"\",\r\n      \"PlaceName\": \"\",\r\n      \"PlaceType\": \"\",\r\n      \"HouseNumber\": \"\",\r\n      \"Address\": \"    \"\r\n    }\r\n    \"IIssuerB\": {\r\n      \"TaxNumber\": null,\r\n      \"Name\": null,\r\n      \"PostalCode\": null,\r\n      \"City\": null,\r\n      \"PlaceName\": null,\r\n      \"PlaceType\": null,\r\n      \"HouseNumber\": null,\r\n      \"Address\": \"    \"\r\n    }\r\n    \"ISite\": {\r\n      \"TaxNumber\": \"\",\r\n      \"Name\": \"\",\r\n      \"PostalCode\": \"\",\r\n      \"City\": \"\",\r\n      \"PlaceName\": \"\",\r\n      \"PlaceType\": \"\",\r\n      \"HouseNumber\": \"\",\r\n      \"Address\": \"    \"\r\n    }\r\n    \"NavVatMessage\": null,\r\n    \"GsmCellID\": \"28269987\",\r\n    \"NavProtocol\": \"C0002\",\r\n    \"NavXmlVersion\": \"X0006\",\r\n    \"ComputerID\": null,\r\n    \"GsmIccid\": \"89460800100007899503\"\r\n  }\r\n}"
-								}
-							]
-						},
-						{
-							"name": "GetAeeStatus - Response JSON",
+							"name": "FirmwarDownloadMenu - Response JSON",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -88,22 +21,28 @@
 										"key": "Accept",
 										"type": "text",
 										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://{{AEE208}}/GetAeeStatus",
+									"raw": "http://{{AEE208}}/FirmwarDownloadMenu",
 									"protocol": "http",
 									"host": [
 										"{{AEE208}}"
 									],
 									"path": [
-										"GetAeeStatus"
+										"FirmwarDownloadMenu"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "GetAeeStatus - Response JSON",
+									"name": "FirmwarDownloadMenu - Response JSON",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -114,13 +53,13 @@
 											}
 										],
 										"url": {
-											"raw": "http://{{AEE208}}/GetAeeStatus",
+											"raw": "http://{{AEE208}}/FirmwarDownloadMenu",
 											"protocol": "http",
 											"host": [
 												"{{AEE208}}"
 											],
 											"path": [
-												"GetAeeStatus"
+												"FirmwarDownloadMenu"
 											]
 										}
 									},
@@ -138,11 +77,190 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "740"
+											"value": "403"
 										}
 									],
 									"cookie": [],
-									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeStatus\",\r\n  \"Result\": {\r\n    \"BatteryLevel\": 97,\r\n    \"BatteryStatus\": \"Full\",\r\n    \"CustomerDisplayStatus\": \"Online\",\r\n    \"DrawerSensor\": \"Unknown\",\r\n    \"GsmDT\": \"2020-02-07T18:16:01\",\r\n    \"GsmGprsRegistration\": true,\r\n    \"GsmLevel\": -79,\r\n    \"GsmOperatorInfo\": \" 1,2,\"21601\",2\",\r\n    \"GsmPdpContext\": true,\r\n    \"GsmStatus\": \"Online\",\r\n    \"LicenceExpire\": \"0001-01-01T00:00:00\",\r\n    \"LicenceExtension\": \"None\",\r\n    \"LicenceVersion\": \"Not installed.\",\r\n    \"PkiCertInstalled\": \"No\",\r\n    \"PowerStatus\": \"On\",\r\n    \"PrinterStatusExt\": \"Online\",\r\n    \"RamAvailable\": 21901312,\r\n    \"SDFree\": 15887425536,\r\n    \"SDUsed\": 3903488,\r\n    \"ShutdownLevel\": 20,\r\n    \"WorkStatus\": \"Ok\"\r\n  }\r\n}"
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String[]\",\n    \"Result\": [\n        \"AEE208 3.2.2.15 Mono Dev\",\n        \"AEE208 3.2.2.14 Mono Dev NoGsm\",\n        \"AEE208 3.2.2.14 Mono BFKH\",\n        \"AEE208 3.2.2.14 Aut Dev\",\n        \"AEE208 3.2.2.14 Aut Dev NoGsm\",\n        \"AEE208 3.2.2.14 Aut BFKH\",\n        \"AEE208 3.2.2.14 Duo Dev\",\n        \"AEE208 3.2.2.14 Duo Dev NoGsm\",\n        \"AEE208 3.2.2.14 Duo BFKH\",\n        \"AEE208 adat torles\",\n        \"AEE208 3.1.8.16 Duo Dev NoGsm\",\n        \"AEE208 3.1.8.16 Duo Dev\\t\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "FirmwareDownload - Response JSON",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "FirmwareIdx",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "FirmwareInfo",
+											"value": "AEE208 3.2.2.15 Mono Dev",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/FirmwareDownload",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"FirmwareDownload"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "FirmwareDownload - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "FirmwareIdx",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "FirmwareInfo",
+													"value": "AEE208 3.2.2.15 Mono Dev",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/FirmwareDownload",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"FirmwareDownload"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "136"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String[]\",\n    \"Result\": [\n        \"AEE208 Original\",\n        \"AEE208 3.2.2.14 Duo Dev\",\n        \"AEE208 3.2.2.15 Mono Dev\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "FirmwareSelectMenu - Response JSON",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/FirmwareSelectMenu",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"FirmwareSelectMenu"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "FirmwareSelectMenu - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/FirmwareSelectMenu",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"FirmwareSelectMenu"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "109"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String[]\",\n    \"Result\": [\n        \"AEE208 Original\",\n        \"AEE208 3.2.2.14 Duo Dev\"\n    ]\n}"
 								}
 							]
 						}
@@ -151,81 +269,34 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Service Mode section",
+					"name": "Factory",
 					"item": [
 						{
-							"name": "Factory",
-							"item": [
-								{
-									"name": "FactorySetup - Response JSON",
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://{{AEE208}}/FactorySetup",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"FactorySetup"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "GetCsrInfo - Response JSON",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://{{AEE208}}/GetCsrInfo",
-													"protocol": "http",
-													"host": [
-														"{{AEE208}}"
-													],
-													"path": [
-														"GetCsrInfo"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Accep-Charset",
-													"value": "utf-8"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "Content-Length",
-													"value": "877"
-												}
-											],
-											"cookie": [],
-											"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeCsrInfo\",\r\n  \"Result\": {\r\n    \"Imei\": \"861311000351568\",\r\n    \"Imsi\": \"240080000789950\",\r\n    \"PkiPublicKey\": wu8BtMJ7Zmx948eSwBdkQSa+9haD4wkKwwvuYn2yPWwnb0y1/HIO1WRC7c2520FFhqv104upFE56z8rohHK7ANlixnBUTOGB3BLAMUWEvVuKYBTo9UGcu4SgUMh7H5aL4I9NoDJEtXWBBXL0/JoqfFSqJLD46d/2uDPpaJekzCShl5Haer74ctKJrz6KuKs3ZT4JH0fO3n52z9UXOm4R39h33foUFQ30O4dUzQaHMR4P7x5xUsv0bUkc2gBBTBHMBCQhHaE8KtvY8IzgMieqxkBkoh6jRk3kO8ZYKoHiG8EAxE8RAcPRt84WjuyHSJhjiA25ARmiKSYuCuBqtMKGrQ==,\r\n    \"SignPublicKey\": vuAcOKlmOMtDluvzjtuRCyrwjgg5FzbM1BBbBrA9OpQ8nApZp1Vl9ugycvoPFLJq3mWy/dx/59RPs6ZGPAeS0zZlYvv0h07id7CI6YzWs1ezzia/D6tqnBO444Sm6MQLITMtfLMKwvRyiiF5x9ov6MPigN3xdopsH1sPmLftrZkLtWjbs5i9r+eKmHyv+u4tqSjZAq7xf3ZOLzWxapojYTfM3OQulye3Ca+Vdx6udaJJwT8n4tQww+1AnCx2Q6Vkc0pq28FhHkUV5xbKdM9vbh0YeCrK/nJhdU8cOue1chFkio9GpjgO7apIosNGTsfFOkUuWkuALPQO+1V7wCsS0Q==\r\n  }\r\n}"
-										}
+							"name": "FactorySetup - Response JSON",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/FactorySetup",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"FactorySetup"
 									]
-								},
+								}
+							},
+							"response": [
 								{
 									"name": "GetCsrInfo - Response JSON",
-									"request": {
+									"originalRequest": {
 										"method": "GET",
 										"header": [
 											{
@@ -245,66 +316,162 @@
 											]
 										}
 									},
-									"response": [
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
 										{
-											"name": "GetCsrInfo - Response JSON",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://{{AEE208}}/GetCsrInfo",
-													"protocol": "http",
-													"host": [
-														"{{AEE208}}"
-													],
-													"path": [
-														"GetCsrInfo"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Accep-Charset",
-													"value": "utf-8"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "Content-Length",
-													"value": "877"
-												}
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "877"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeCsrInfo\",\r\n  \"Result\": {\r\n    \"Imei\": \"861311000351568\",\r\n    \"Imsi\": \"240080000789950\",\r\n    \"PkiPublicKey\": wu8BtMJ7Zmx948eSwBdkQSa+9haD4wkKwwvuYn2yPWwnb0y1/HIO1WRC7c2520FFhqv104upFE56z8rohHK7ANlixnBUTOGB3BLAMUWEvVuKYBTo9UGcu4SgUMh7H5aL4I9NoDJEtXWBBXL0/JoqfFSqJLD46d/2uDPpaJekzCShl5Haer74ctKJrz6KuKs3ZT4JH0fO3n52z9UXOm4R39h33foUFQ30O4dUzQaHMR4P7x5xUsv0bUkc2gBBTBHMBCQhHaE8KtvY8IzgMieqxkBkoh6jRk3kO8ZYKoHiG8EAxE8RAcPRt84WjuyHSJhjiA25ARmiKSYuCuBqtMKGrQ==,\r\n    \"SignPublicKey\": vuAcOKlmOMtDluvzjtuRCyrwjgg5FzbM1BBbBrA9OpQ8nApZp1Vl9ugycvoPFLJq3mWy/dx/59RPs6ZGPAeS0zZlYvv0h07id7CI6YzWs1ezzia/D6tqnBO444Sm6MQLITMtfLMKwvRyiiF5x9ov6MPigN3xdopsH1sPmLftrZkLtWjbs5i9r+eKmHyv+u4tqSjZAq7xf3ZOLzWxapojYTfM3OQulye3Ca+Vdx6udaJJwT8n4tQww+1AnCx2Q6Vkc0pq28FhHkUV5xbKdM9vbh0YeCrK/nJhdU8cOue1chFkio9GpjgO7apIosNGTsfFOkUuWkuALPQO+1V7wCsS0Q==\r\n  }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "GetCsrInfo - Response JSON",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/GetCsrInfo",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetCsrInfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetCsrInfo - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetCsrInfo",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
 											],
-											"cookie": [],
-											"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeCsrInfo\",\r\n  \"Result\": {\r\n    \"Imei\": \"861311000351568\",\r\n    \"Imsi\": \"240080000789950\",\r\n    \"PkiPublicKey\": wu8BtMJ7Zmx948eSwBdkQSa+9haD4wkKwwvuYn2yPWwnb0y1/HIO1WRC7c2520FFhqv104upFE56z8rohHK7ANlixnBUTOGB3BLAMUWEvVuKYBTo9UGcu4SgUMh7H5aL4I9NoDJEtXWBBXL0/JoqfFSqJLD46d/2uDPpaJekzCShl5Haer74ctKJrz6KuKs3ZT4JH0fO3n52z9UXOm4R39h33foUFQ30O4dUzQaHMR4P7x5xUsv0bUkc2gBBTBHMBCQhHaE8KtvY8IzgMieqxkBkoh6jRk3kO8ZYKoHiG8EAxE8RAcPRt84WjuyHSJhjiA25ARmiKSYuCuBqtMKGrQ==,\r\n    \"SignPublicKey\": vuAcOKlmOMtDluvzjtuRCyrwjgg5FzbM1BBbBrA9OpQ8nApZp1Vl9ugycvoPFLJq3mWy/dx/59RPs6ZGPAeS0zZlYvv0h07id7CI6YzWs1ezzia/D6tqnBO444Sm6MQLITMtfLMKwvRyiiF5x9ov6MPigN3xdopsH1sPmLftrZkLtWjbs5i9r+eKmHyv+u4tqSjZAq7xf3ZOLzWxapojYTfM3OQulye3Ca+Vdx6udaJJwT8n4tQww+1AnCx2Q6Vkc0pq28FhHkUV5xbKdM9vbh0YeCrK/nJhdU8cOue1chFkio9GpjgO7apIosNGTsfFOkUuWkuALPQO+1V7wCsS0Q==\r\n  }\r\n}"
+											"path": [
+												"GetCsrInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "877"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeCsrInfo\",\r\n  \"Result\": {\r\n    \"Imei\": \"861311000351568\",\r\n    \"Imsi\": \"240080000789950\",\r\n    \"PkiPublicKey\": wu8BtMJ7Zmx948eSwBdkQSa+9haD4wkKwwvuYn2yPWwnb0y1/HIO1WRC7c2520FFhqv104upFE56z8rohHK7ANlixnBUTOGB3BLAMUWEvVuKYBTo9UGcu4SgUMh7H5aL4I9NoDJEtXWBBXL0/JoqfFSqJLD46d/2uDPpaJekzCShl5Haer74ctKJrz6KuKs3ZT4JH0fO3n52z9UXOm4R39h33foUFQ30O4dUzQaHMR4P7x5xUsv0bUkc2gBBTBHMBCQhHaE8KtvY8IzgMieqxkBkoh6jRk3kO8ZYKoHiG8EAxE8RAcPRt84WjuyHSJhjiA25ARmiKSYuCuBqtMKGrQ==,\r\n    \"SignPublicKey\": vuAcOKlmOMtDluvzjtuRCyrwjgg5FzbM1BBbBrA9OpQ8nApZp1Vl9ugycvoPFLJq3mWy/dx/59RPs6ZGPAeS0zZlYvv0h07id7CI6YzWs1ezzia/D6tqnBO444Sm6MQLITMtfLMKwvRyiiF5x9ov6MPigN3xdopsH1sPmLftrZkLtWjbs5i9r+eKmHyv+u4tqSjZAq7xf3ZOLzWxapojYTfM3OQulye3Ca+Vdx6udaJJwT8n4tQww+1AnCx2Q6Vkc0pq28FhHkUV5xbKdM9vbh0YeCrK/nJhdU8cOue1chFkio9GpjgO7apIosNGTsfFOkUuWkuALPQO+1V7wCsS0Q==\r\n  }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "SetCertificate - Response JSON Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "SignCertificate",
+											"description": "Aláíró tanúsítvány",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "PkiCertificate",
+											"description": "Pki tanúsítvány",
+											"type": "file",
+											"src": []
 										}
 									]
 								},
+								"url": {
+									"raw": "http://{{AEE208}}/SetCertificate",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"SetCertificate"
+									]
+								}
+							},
+							"response": [
 								{
-									"name": "SetCertificate - Response JSON Copy",
-									"request": {
+									"name": "Shutdown - Response JSON",
+									"originalRequest": {
 										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
 												"name": "Content-Type",
-												"type": "text",
-												"value": "application/x-www-form-urlencoded"
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
 											},
 											{
 												"key": "Accept",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -317,106 +484,57 @@
 													"type": "text"
 												},
 												{
-													"key": "SignCertificate",
-													"description": "Aláíró tanúsítvány",
-													"type": "file",
-													"src": []
+													"key": "Pin",
+													"value": "23436",
+													"type": "text"
 												},
 												{
-													"key": "PkiCertificate",
-													"description": "Pki tanúsítvány",
+													"key": "UserCertificate",
 													"type": "file",
-													"src": []
+													"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Teszt Elek V1 + PKI.cer"
 												}
 											]
 										},
 										"url": {
-											"raw": "http://{{AEE208}}/SetCertificate",
+											"raw": "http://{{AEE208}}/Shutdown",
 											"protocol": "http",
 											"host": [
 												"{{AEE208}}"
 											],
 											"path": [
-												"SetCertificate"
+												"Shutdown"
 											]
 										}
 									},
-									"response": [
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
 										{
-											"name": "Shutdown - Response JSON",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"name": "Content-Type",
-														"value": "application/x-www-form-urlencoded",
-														"type": "text"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "SessionId",
-															"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-															"description": "Munkafolyamat egyedi azonosító",
-															"type": "text"
-														},
-														{
-															"key": "Pin",
-															"value": "23436",
-															"type": "text"
-														},
-														{
-															"key": "UserCertificate",
-															"type": "file",
-															"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Teszt Elek V1 + PKI.cer"
-														}
-													]
-												},
-												"url": {
-													"raw": "http://{{AEE208}}/Shutdown",
-													"protocol": "http",
-													"host": [
-														"{{AEE208}}"
-													],
-													"path": [
-														"Shutdown"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Accep-Charset",
-													"value": "utf-8"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "Content-Length",
-													"value": "71"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
 										}
-									]
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
 								}
-							],
-							"protocolProfileBehavior": {},
-							"_postman_isSubFolder": true
-						},
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Service",
+					"item": [
 						{
 							"name": "ServiceMode - Response JSON",
 							"request": {
@@ -731,6 +849,147 @@
 									""
 								]
 							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AEE",
+					"item": [
+						{
+							"name": "GetAeeInfo - Response JSON",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/GetAeeInfo",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetAeeInfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetAeeInfo",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetAeeInfo",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"GetAeeInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2068"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeInfo\",\r\n  \"Result\": {\r\n    \"DeviceName\": \"AEE208 Develop\",\r\n    \"HardwareVersion\": \"V0001\",\r\n    \"HardwareManufacturer\": \"Com-Passz Kft.\",\r\n    \"SoftwareVersion\": \"V0032\",\r\n    \"SoftwareSha256\": \"9186DD5C433EF5E720BBE106E1287EC3BABCEDAEF165F6C6F21D0BDC18933849\",\r\n    \"SoftwareUpdateDT\": \"2020-02-07T14:02:49\",\r\n    \"SoftwareManufacturer\": \"Com-Passz Kft.\",\r\n    \"SerialNumber\": \"02407461\",\r\n    \"GsmDeviceName\": \"SIMCOM_SIM5320E\",\r\n    \"GsmSoftwareVersion\": \"1575B12SIM5320E\",\r\n    \"GsmImei\": \"861311000351568\",\r\n    \"GsmImsi\": \"240080000789950\",\r\n    \"CashRegisterName\": null,\r\n    \"CashRegisterHardwareVersion\": null,\r\n    \"CashRegisterSoftwareVersion\": null,\r\n    \"CashRegisterSoftwareSha256\": null,\r\n    \"ActivationCode\": null,\r\n    \"ApNumber\": \"A00000000\",\r\n    \"PkiRequired\": false,\r\n    \"ConditionalInfo\": \"<TAeeConditional>AeeDevelop, AeeMono, AeeGsmOn, AeeStoreTest, </TAeeConditional><TIOsConditional>Slave, </TIOsConditional>\",\r\n    \"BatterySerialNumber\": \"-\",\r\n    \"IIssuer\": {\r\n      \"TaxNumber\": \"\",\r\n      \"Name\": \"\",\r\n      \"PostalCode\": \"\",\r\n      \"City\": \"\",\r\n      \"PlaceName\": \"\",\r\n      \"PlaceType\": \"\",\r\n      \"HouseNumber\": \"\",\r\n      \"Address\": \"    \"\r\n    }\r\n    \"IIssuerA\": {\r\n      \"TaxNumber\": \"\",\r\n      \"Name\": \"\",\r\n      \"PostalCode\": \"\",\r\n      \"City\": \"\",\r\n      \"PlaceName\": \"\",\r\n      \"PlaceType\": \"\",\r\n      \"HouseNumber\": \"\",\r\n      \"Address\": \"    \"\r\n    }\r\n    \"IIssuerB\": {\r\n      \"TaxNumber\": null,\r\n      \"Name\": null,\r\n      \"PostalCode\": null,\r\n      \"City\": null,\r\n      \"PlaceName\": null,\r\n      \"PlaceType\": null,\r\n      \"HouseNumber\": null,\r\n      \"Address\": \"    \"\r\n    }\r\n    \"ISite\": {\r\n      \"TaxNumber\": \"\",\r\n      \"Name\": \"\",\r\n      \"PostalCode\": \"\",\r\n      \"City\": \"\",\r\n      \"PlaceName\": \"\",\r\n      \"PlaceType\": \"\",\r\n      \"HouseNumber\": \"\",\r\n      \"Address\": \"    \"\r\n    }\r\n    \"NavVatMessage\": null,\r\n    \"GsmCellID\": \"28269987\",\r\n    \"NavProtocol\": \"C0002\",\r\n    \"NavXmlVersion\": \"X0006\",\r\n    \"ComputerID\": null,\r\n    \"GsmIccid\": \"89460800100007899503\"\r\n  }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "GetAeeStatus - Response JSON",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/GetAeeStatus",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetAeeStatus"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetAeeStatus - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetAeeStatus",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"GetAeeStatus"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "740"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeStatus\",\r\n  \"Result\": {\r\n    \"BatteryLevel\": 97,\r\n    \"BatteryStatus\": \"Full\",\r\n    \"CustomerDisplayStatus\": \"Online\",\r\n    \"DrawerSensor\": \"Unknown\",\r\n    \"GsmDT\": \"2020-02-07T18:16:01\",\r\n    \"GsmGprsRegistration\": true,\r\n    \"GsmLevel\": -79,\r\n    \"GsmOperatorInfo\": \" 1,2,\"21601\",2\",\r\n    \"GsmPdpContext\": true,\r\n    \"GsmStatus\": \"Online\",\r\n    \"LicenceExpire\": \"0001-01-01T00:00:00\",\r\n    \"LicenceExtension\": \"None\",\r\n    \"LicenceVersion\": \"Not installed.\",\r\n    \"PkiCertInstalled\": \"No\",\r\n    \"PowerStatus\": \"On\",\r\n    \"PrinterStatusExt\": \"Online\",\r\n    \"RamAvailable\": 21901312,\r\n    \"SDFree\": 15887425536,\r\n    \"SDUsed\": 3903488,\r\n    \"ShutdownLevel\": 20,\r\n    \"WorkStatus\": \"Ok\"\r\n  }\r\n}"
+								}
+							]
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -4412,10 +4671,16 @@
 			"name": "XML response",
 			"item": [
 				{
-					"name": "AEE",
+					"name": "Develop",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Factory",
 					"item": [
 						{
-							"name": "GetAeeInfo - Response XML",
+							"name": "GetCsrInfo - Response XML",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -4426,141 +4691,20 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{AEE208}}/GetAeeInfo",
+									"raw": "http://{{AEE208}}/GetCsrInfo",
 									"protocol": "http",
 									"host": [
 										"{{AEE208}}"
 									],
 									"path": [
-										"GetAeeInfo"
+										"GetCsrInfo"
 									]
 								}
 							},
 							"response": [
-								{
-									"name": "GetAeeInfo - Response XML",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/xml",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://{{AEE208}}/GetAeeInfo",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"GetAeeInfo"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "xml",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/xml"
-										},
-										{
-											"key": "Content-Length",
-											"value": "2480"
-										}
-									],
-									"cookie": [],
-									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeInfo</ResultType>\n    <Result xsi:type=\"TAeeInfo\">\n        <DeviceName>AEE208 Develop</DeviceName>\n        <HardwareVersion>V0001</HardwareVersion>\n        <HardwareManufacturer>Com-Passz Kft.</HardwareManufacturer>\n        <SoftwareVersion>V0032</SoftwareVersion>\n        <SoftwareSha256>9186DD5C433EF5E720BBE106E1287EC3BABCEDAEF165F6C6F21D0BDC18933849</SoftwareSha256>\n        <SoftwareUpdateDT>2020-02-07T14:02:49</SoftwareUpdateDT>\n        <SoftwareManufacturer>Com-Passz Kft.</SoftwareManufacturer>\n        <SerialNumber>02407461</SerialNumber>\n        <GsmDeviceName>SIMCOM_SIM5320E</GsmDeviceName>\n        <GsmSoftwareVersion>1575B12SIM5320E</GsmSoftwareVersion>\n        <GsmImei>861311000351568</GsmImei>\n        <GsmImsi>240080000789950</GsmImsi>\n        <CashRegisterName />\n        <CashRegisterHardwareVersion />\n        <CashRegisterSoftwareVersion />\n        <CashRegisterSoftwareSha256 />\n        <ActivationCode />\n        <ApNumber>A00000000</ApNumber>\n        <PkiRequired>False</PkiRequired>\n        <ConditionalInfo>\n            <TAeeConditional>AeeDevelop, AeeMono, AeeGsmOn, AeeStoreTest, </TAeeConditional>\n            <TIOsConditional>Slave, </TIOsConditional>\n        </ConditionalInfo>\n        <BatterySerialNumber>-</BatterySerialNumber>\n        <IIssuer xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </IIssuer>\n        <IIssuerA xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </IIssuerA>\n        <IIssuerB xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </IIssuerB>\n        <ISite xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </ISite>\n        <NavVatMessage />\n        <GsmCellID>28269987</GsmCellID>\n        <NavProtocol>C0002</NavProtocol>\n        <NavXmlVersion>X0006</NavXmlVersion>\n        <ComputerID />\n        <GsmIccid>89460800100007899503</GsmIccid>\n    </Result>\n</TResponse>"
-								}
-							]
-						},
-						{
-							"name": "GetAeeStatus - Response XML",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/xml"
-									}
-								],
-								"url": {
-									"raw": "http://{{AEE208}}/GetAeeStatus",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"GetAeeStatus"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "GetAeeStatus - Response XML",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"type": "text",
-												"value": "application/xml"
-											}
-										],
-										"url": {
-											"raw": "http://{{AEE208}}/GetAeeStatus",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"GetAeeStatus"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "xml",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/xml"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1175"
-										}
-									],
-									"cookie": [],
-									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeStatus</ResultType>\n    <Result xsi:type=\"TAeeStatus\">\n        <BatteryLevel>98</BatteryLevel>\n        <BatteryStatus>Full</BatteryStatus>\n        <CustomerDisplayStatus>Online</CustomerDisplayStatus>\n        <DrawerSensor>Unknown</DrawerSensor>\n        <GsmDT>2020-02-07T18:15:02</GsmDT>\n        <GsmGprsRegistration>True</GsmGprsRegistration>\n        <GsmLevel>-79</GsmLevel>\n        <GsmOperatorInfo> 1,2,\"21601\",2</GsmOperatorInfo>\n        <GsmPdpContext>True</GsmPdpContext>\n        <GsmStatus>Offline</GsmStatus>\n        <LicenceExpire>0001-01-01T00:00:00</LicenceExpire>\n        <LicenceExtension>None</LicenceExtension>\n        <LicenceVersion>Not installed.</LicenceVersion>\n        <PkiCertInstalled>No</PkiCertInstalled>\n        <PowerStatus>On</PowerStatus>\n        <PrinterStatusExt>Online</PrinterStatusExt>\n        <RamAvailable>21946368</RamAvailable>\n        <SDFree>15887425536</SDFree>\n        <SDUsed>3903488</SDUsed>\n        <ShutdownLevel>20</ShutdownLevel>\n        <WorkStatus>Ok</WorkStatus>\n    </Result>\n</TResponse>"
-								}
-							]
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Service Mode section",
-					"item": [
-						{
-							"name": "Factory Copy",
-							"item": [
 								{
 									"name": "GetCsrInfo - Response XML",
-									"request": {
+									"originalRequest": {
 										"method": "GET",
 										"header": [
 											{
@@ -4580,66 +4724,93 @@
 											]
 										}
 									},
-									"response": [
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
 										{
-											"name": "GetCsrInfo - Response XML",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/xml",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://{{AEE208}}/GetCsrInfo",
-													"protocol": "http",
-													"host": [
-														"{{AEE208}}"
-													],
-													"path": [
-														"GetCsrInfo"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "xml",
-											"header": [
-												{
-													"key": "Accep-Charset",
-													"value": "utf-8"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/xml"
-												},
-												{
-													"key": "Content-Length",
-													"value": "1107"
-												}
-											],
-											"cookie": [],
-											"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeCsrInfo</ResultType>\n    <Result xsi:type=\"TAeeCsrInfo\">\n        <Imei>861311000351568</Imei>\n        <Imsi>240080000789950</Imsi>\n        <PkiPublicKey>wu8BtMJ7Zmx948eSwBdkQSa+9haD4wkKwwvuYn2yPWwnb0y1/HIO1WRC7c2520FFhqv104upFE56z8rohHK7ANlixnBUTOGB3BLAMUWEvVuKYBTo9UGcu4SgUMh7H5aL4I9NoDJEtXWBBXL0/JoqfFSqJLD46d/2uDPpaJekzCShl5Haer74ctKJrz6KuKs3ZT4JH0fO3n52z9UXOm4R39h33foUFQ30O4dUzQaHMR4P7x5xUsv0bUkc2gBBTBHMBCQhHaE8KtvY8IzgMieqxkBkoh6jRk3kO8ZYKoHiG8EAxE8RAcPRt84WjuyHSJhjiA25ARmiKSYuCuBqtMKGrQ==</PkiPublicKey>\n        <SignPublicKey>vuAcOKlmOMtDluvzjtuRCyrwjgg5FzbM1BBbBrA9OpQ8nApZp1Vl9ugycvoPFLJq3mWy/dx/59RPs6ZGPAeS0zZlYvv0h07id7CI6YzWs1ezzia/D6tqnBO444Sm6MQLITMtfLMKwvRyiiF5x9ov6MPigN3xdopsH1sPmLftrZkLtWjbs5i9r+eKmHyv+u4tqSjZAq7xf3ZOLzWxapojYTfM3OQulye3Ca+Vdx6udaJJwT8n4tQww+1AnCx2Q6Vkc0pq28FhHkUV5xbKdM9vbh0YeCrK/nJhdU8cOue1chFkio9GpjgO7apIosNGTsfFOkUuWkuALPQO+1V7wCsS0Q==</SignPublicKey>\n    </Result>\n</TResponse>"
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1107"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeCsrInfo</ResultType>\n    <Result xsi:type=\"TAeeCsrInfo\">\n        <Imei>861311000351568</Imei>\n        <Imsi>240080000789950</Imsi>\n        <PkiPublicKey>wu8BtMJ7Zmx948eSwBdkQSa+9haD4wkKwwvuYn2yPWwnb0y1/HIO1WRC7c2520FFhqv104upFE56z8rohHK7ANlixnBUTOGB3BLAMUWEvVuKYBTo9UGcu4SgUMh7H5aL4I9NoDJEtXWBBXL0/JoqfFSqJLD46d/2uDPpaJekzCShl5Haer74ctKJrz6KuKs3ZT4JH0fO3n52z9UXOm4R39h33foUFQ30O4dUzQaHMR4P7x5xUsv0bUkc2gBBTBHMBCQhHaE8KtvY8IzgMieqxkBkoh6jRk3kO8ZYKoHiG8EAxE8RAcPRt84WjuyHSJhjiA25ARmiKSYuCuBqtMKGrQ==</PkiPublicKey>\n        <SignPublicKey>vuAcOKlmOMtDluvzjtuRCyrwjgg5FzbM1BBbBrA9OpQ8nApZp1Vl9ugycvoPFLJq3mWy/dx/59RPs6ZGPAeS0zZlYvv0h07id7CI6YzWs1ezzia/D6tqnBO444Sm6MQLITMtfLMKwvRyiiF5x9ov6MPigN3xdopsH1sPmLftrZkLtWjbs5i9r+eKmHyv+u4tqSjZAq7xf3ZOLzWxapojYTfM3OQulye3Ca+Vdx6udaJJwT8n4tQww+1AnCx2Q6Vkc0pq28FhHkUV5xbKdM9vbh0YeCrK/nJhdU8cOue1chFkio9GpjgO7apIosNGTsfFOkUuWkuALPQO+1V7wCsS0Q==</SignPublicKey>\n    </Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "SetCertificate - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "Pin",
+											"value": "23436",
+											"type": "text"
+										},
+										{
+											"key": "UserCertificate",
+											"type": "file",
+											"src": "/Volumes/Source/AEE/Teszt Elek V1 + PKI.cer"
 										}
 									]
 								},
+								"url": {
+									"raw": "http://{{AEE208}}/SetCertificate",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"SetCertificate"
+									]
+								}
+							},
+							"response": [
 								{
-									"name": "SetCertificate - Response XML",
-									"request": {
+									"name": "Shutdown - Response JSON",
+									"originalRequest": {
 										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
 												"name": "Content-Type",
-												"type": "text",
-												"value": "application/x-www-form-urlencoded"
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
 											},
 											{
 												"key": "Accept",
-												"type": "text",
-												"value": "application/xml"
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -4659,97 +4830,50 @@
 												{
 													"key": "UserCertificate",
 													"type": "file",
-													"src": "/Volumes/Source/AEE/Teszt Elek V1 + PKI.cer"
+													"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Teszt Elek V1 + PKI.cer"
 												}
 											]
 										},
 										"url": {
-											"raw": "http://{{AEE208}}/SetCertificate",
+											"raw": "http://{{AEE208}}/Shutdown",
 											"protocol": "http",
 											"host": [
 												"{{AEE208}}"
 											],
 											"path": [
-												"SetCertificate"
+												"Shutdown"
 											]
 										}
 									},
-									"response": [
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
 										{
-											"name": "Shutdown - Response JSON",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"name": "Content-Type",
-														"value": "application/x-www-form-urlencoded",
-														"type": "text"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "SessionId",
-															"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-															"description": "Munkafolyamat egyedi azonosító",
-															"type": "text"
-														},
-														{
-															"key": "Pin",
-															"value": "23436",
-															"type": "text"
-														},
-														{
-															"key": "UserCertificate",
-															"type": "file",
-															"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Teszt Elek V1 + PKI.cer"
-														}
-													]
-												},
-												"url": {
-													"raw": "http://{{AEE208}}/Shutdown",
-													"protocol": "http",
-													"host": [
-														"{{AEE208}}"
-													],
-													"path": [
-														"Shutdown"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Accep-Charset",
-													"value": "utf-8"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "Content-Length",
-													"value": "71"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
 										}
-									]
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
 								}
-							],
-							"protocolProfileBehavior": {},
-							"_postman_isSubFolder": true
-						},
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Service",
+					"item": [
 						{
 							"name": "ServiceMode - Response XML",
 							"request": {
@@ -5040,6 +5164,147 @@
 									],
 									"cookie": [],
 									"body": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>String</ResultType>\n    <Result xsi:type=\"xsd:string\">success</Result>\n</TResponse>"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AEE",
+					"item": [
+						{
+							"name": "GetAeeInfo - Response XML",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/GetAeeInfo",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetAeeInfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetAeeInfo - Response XML",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetAeeInfo",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"GetAeeInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2480"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeInfo</ResultType>\n    <Result xsi:type=\"TAeeInfo\">\n        <DeviceName>AEE208 Develop</DeviceName>\n        <HardwareVersion>V0001</HardwareVersion>\n        <HardwareManufacturer>Com-Passz Kft.</HardwareManufacturer>\n        <SoftwareVersion>V0032</SoftwareVersion>\n        <SoftwareSha256>9186DD5C433EF5E720BBE106E1287EC3BABCEDAEF165F6C6F21D0BDC18933849</SoftwareSha256>\n        <SoftwareUpdateDT>2020-02-07T14:02:49</SoftwareUpdateDT>\n        <SoftwareManufacturer>Com-Passz Kft.</SoftwareManufacturer>\n        <SerialNumber>02407461</SerialNumber>\n        <GsmDeviceName>SIMCOM_SIM5320E</GsmDeviceName>\n        <GsmSoftwareVersion>1575B12SIM5320E</GsmSoftwareVersion>\n        <GsmImei>861311000351568</GsmImei>\n        <GsmImsi>240080000789950</GsmImsi>\n        <CashRegisterName />\n        <CashRegisterHardwareVersion />\n        <CashRegisterSoftwareVersion />\n        <CashRegisterSoftwareSha256 />\n        <ActivationCode />\n        <ApNumber>A00000000</ApNumber>\n        <PkiRequired>False</PkiRequired>\n        <ConditionalInfo>\n            <TAeeConditional>AeeDevelop, AeeMono, AeeGsmOn, AeeStoreTest, </TAeeConditional>\n            <TIOsConditional>Slave, </TIOsConditional>\n        </ConditionalInfo>\n        <BatterySerialNumber>-</BatterySerialNumber>\n        <IIssuer xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </IIssuer>\n        <IIssuerA xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </IIssuerA>\n        <IIssuerB xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </IIssuerB>\n        <ISite xsi:type=\"TIssuer\">\n            <TaxNumber />\n            <Name />\n            <PostalCode />\n            <City />\n            <PlaceName />\n            <PlaceType />\n            <HouseNumber />\n            <Address>    </Address>\n        </ISite>\n        <NavVatMessage />\n        <GsmCellID>28269987</GsmCellID>\n        <NavProtocol>C0002</NavProtocol>\n        <NavXmlVersion>X0006</NavXmlVersion>\n        <ComputerID />\n        <GsmIccid>89460800100007899503</GsmIccid>\n    </Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "GetAeeStatus - Response XML",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/GetAeeStatus",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetAeeStatus"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetAeeStatus - Response XML",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetAeeStatus",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"GetAeeStatus"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1175"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeStatus</ResultType>\n    <Result xsi:type=\"TAeeStatus\">\n        <BatteryLevel>98</BatteryLevel>\n        <BatteryStatus>Full</BatteryStatus>\n        <CustomerDisplayStatus>Online</CustomerDisplayStatus>\n        <DrawerSensor>Unknown</DrawerSensor>\n        <GsmDT>2020-02-07T18:15:02</GsmDT>\n        <GsmGprsRegistration>True</GsmGprsRegistration>\n        <GsmLevel>-79</GsmLevel>\n        <GsmOperatorInfo> 1,2,\"21601\",2</GsmOperatorInfo>\n        <GsmPdpContext>True</GsmPdpContext>\n        <GsmStatus>Offline</GsmStatus>\n        <LicenceExpire>0001-01-01T00:00:00</LicenceExpire>\n        <LicenceExtension>None</LicenceExtension>\n        <LicenceVersion>Not installed.</LicenceVersion>\n        <PkiCertInstalled>No</PkiCertInstalled>\n        <PowerStatus>On</PowerStatus>\n        <PrinterStatusExt>Online</PrinterStatusExt>\n        <RamAvailable>21946368</RamAvailable>\n        <SDFree>15887425536</SDFree>\n        <SDUsed>3903488</SDUsed>\n        <ShutdownLevel>20</ShutdownLevel>\n        <WorkStatus>Ok</WorkStatus>\n    </Result>\n</TResponse>"
 								}
 							]
 						}
@@ -8738,7 +9003,7 @@
 	],
 	"variable": [
 		{
-			"id": "4e0a7c9c-0c18-42d8-b346-7dfe55a3c84f",
+			"id": "138d75a2-b9e5-4678-b5df-8e02c12af5fe",
 			"key": "AEE208",
 			"value": "192.168.1.45:8080",
 			"type": "string"
