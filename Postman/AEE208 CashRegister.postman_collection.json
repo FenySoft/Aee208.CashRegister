@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "59d07a1a-7840-4a6a-b703-bf8b6a900b3f",
+		"_postman_id": "85ef79ee-b373-40cb-8328-6a9a45cc3c91",
 		"name": "AEE208 CashRegister",
 		"description": "AEE208 CashRegister\n- XHTML/AJAX\n- Webbrowser or Webview",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -149,21 +149,6 @@
 												"type": "text"
 											}
 										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "FirmwareIdx",
-													"value": "0",
-													"type": "text"
-												},
-												{
-													"key": "FirmwareInfo",
-													"value": "AEE208 3.2.2.15 Mono Dev",
-													"type": "text"
-												}
-											]
-										},
 										"url": {
 											"raw": "http://{{AEE208}}/FirmwareDownload",
 											"protocol": "http",
@@ -708,6 +693,193 @@
 							"response": []
 						},
 						{
+							"name": "CashRegisterConfig - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "DailyOpenPaymentInfo",
+											"value": "Nyitó összeg",
+											"description": "Napnyitáshoz alapértelemzett jogcím arra az esetre, ha az nem lenne megadva",
+											"type": "text"
+										},
+										{
+											"key": "Trademark",
+											"value": "Com-Passz Kft, www.com-passz.hu",
+											"description": "Pénztárgép gyártó",
+											"type": "text"
+										},
+										{
+											"key": "TerminalCode",
+											"value": "001",
+											"description": "Pénztárgép azonosító",
+											"type": "text"
+										},
+										{
+											"key": "NetworkAdapter.Name",
+											"value": "AX887961",
+											"description": "Hálózati eszköz neve",
+											"type": "text"
+										},
+										{
+											"key": "NetworkAdapter.IpAddress",
+											"value": "192.168.1.24",
+											"description": "Pénztárgép IP ",
+											"type": "text"
+										},
+										{
+											"key": "NetworkAdapter.SubnetMask",
+											"value": "255.255.255.0",
+											"description": "Pénztárgép hálózati maszk",
+											"type": "text"
+										},
+										{
+											"key": "NetworkAdapter.Gateway",
+											"value": "192.168.1.254",
+											"description": "Pénztárgép átjáró",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/CashRegisterConfig",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"CashRegisterConfig"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashRegisterConfig - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "DailyOpenPaymentInfo",
+													"value": "Nyitó összeg",
+													"description": "Napnyitáshoz alapértelemzett jogcím arra az esetre, ha az nem lenne megadva",
+													"type": "text"
+												},
+												{
+													"key": "Trademark",
+													"value": "Com-Passz Kft, www.com-passz.hu",
+													"description": "Pénztárgép gyártó",
+													"type": "text"
+												},
+												{
+													"key": "TerminalCode",
+													"value": "001",
+													"description": "Pénztárgép azonosító",
+													"type": "text"
+												},
+												{
+													"key": "NetworkAdapter.Name",
+													"value": "AX887961",
+													"description": "Hálózati eszköz neve",
+													"type": "text"
+												},
+												{
+													"key": "NetworkAdapter.IpAddress",
+													"value": "192.168.1.24",
+													"description": "Pénztárgép IP ",
+													"type": "text"
+												},
+												{
+													"key": "NetworkAdapter.SubnetMask",
+													"value": "255.255.255.0",
+													"description": "Pénztárgép hálózati maszk",
+													"type": "text"
+												},
+												{
+													"key": "NetworkAdapter.Gateway",
+													"value": "192.168.1.254",
+													"description": "Pénztárgép átjáró",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashRegisterConfig",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashRegisterConfig"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
+								}
+							]
+						},
+						{
 							"name": "Shutdown - Response JSON",
 							"request": {
 								"method": "POST",
@@ -988,6 +1160,378 @@
 									],
 									"cookie": [],
 									"body": "{\r\n  \"Status\": \"succes\",\r\n  \"ResultType\": \"TAeeStatus\",\r\n  \"Result\": {\r\n    \"BatteryLevel\": 97,\r\n    \"BatteryStatus\": \"Full\",\r\n    \"CustomerDisplayStatus\": \"Online\",\r\n    \"DrawerSensor\": \"Unknown\",\r\n    \"GsmDT\": \"2020-02-07T18:16:01\",\r\n    \"GsmGprsRegistration\": true,\r\n    \"GsmLevel\": -79,\r\n    \"GsmOperatorInfo\": \" 1,2,\"21601\",2\",\r\n    \"GsmPdpContext\": true,\r\n    \"GsmStatus\": \"Online\",\r\n    \"LicenceExpire\": \"0001-01-01T00:00:00\",\r\n    \"LicenceExtension\": \"None\",\r\n    \"LicenceVersion\": \"Not installed.\",\r\n    \"PkiCertInstalled\": \"No\",\r\n    \"PowerStatus\": \"On\",\r\n    \"PrinterStatusExt\": \"Online\",\r\n    \"RamAvailable\": 21901312,\r\n    \"SDFree\": 15887425536,\r\n    \"SDUsed\": 3903488,\r\n    \"ShutdownLevel\": 20,\r\n    \"WorkStatus\": \"Ok\"\r\n  }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "GetXml - Response JSON",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "JournalId",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "Count",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/GetXml",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetXml"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetXml - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetXml",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"GetXml"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "22550"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TDownload\",\n    \"Result\": {\n        \"Name\": \"Y00300045.p7b.zip\",\n        \"Content\": \"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\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "ExportXmlToUsb - Response JSON",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "JournalId",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "Count",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/ExportXmlToUsb",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"ExportXmlToUsb"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ExportXmlToUsb - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/ExportXmlToUsb",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"ExportXmlToUsb"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "99"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"Sikeresen másolt fájlok száma: 5\"\n}"
+								}
+							]
+						},
+						{
+							"name": "AeeDataReport - Response JSON",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/AeeDataReport",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"AeeDataReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "AeeDataReport - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/AeeDataReport",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"AeeDataReport"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "SetLicence - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "Licence",
+											"type": "file",
+											"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Y00300045/Y00300045 LM SIU QR.lic.enc"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/SetLicence",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"SetLicence"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SetLicence - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "Licence",
+													"type": "file",
+													"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Y00300045/Y00300045 LM SIU QR.lic.enc"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/SetLicence",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"SetLicence"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
 								}
 							]
 						}
@@ -4021,6 +4565,313 @@
 									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TSummary\",\n    \"Result\": {\n        \"Oid\": 2,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CreateDT\": \"2020-02-06T19:03:54\",\n        \"CloseDT\": \"2020-02-06T19:13:21\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"F/0011/00001\",\n        \"DocNumberExt\": \"F/0011/00001\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"4832C\",\n        \"Owner\": 0,\n        \"Uid\": 110,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"SellItems\": [\n            {\n                \"ItemTypeToNav\": \"\",\n                \"SummaryItemTypeToNav\": \"x\",\n                \"IsProduct\": true,\n                \"ItemIndex\": 0,\n                \"ProductOid\": 0,\n                \"ProductCode\": null,\n                \"ProductName\": \"Teszt termék\",\n                \"ItemType\": 0,\n                \"Qty\": 2,\n                \"UnitName\": \"db\",\n                \"Gup\": 100,\n                \"Gp\": 200,\n                \"VatCode\": \"C00\",\n                \"ReturnQty\": 0,\n                \"LinkIndex\": 0,\n                \"Owner\": 0,\n                \"PrintProductCode\": false,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null,\n                \"SubTotal\": 0,\n                \"PrintIndex\": 0\n            }\n        ],\n        \"SellId\": \"0/000002\",\n        \"OriginalSellItems\": [],\n        \"UpdatedSellItems\": [],\n        \"SellStatus\": \"Total\",\n        \"SellItemTypeCounts\": [\n            {\n                \"Sell\": \"1\"\n            }\n        ],\n        \"SellItemTypes\": [\n            {\n                \"Sell\": \"200\"\n            }\n        ],\n        \"VatItems\": [\n            {\n                \"C00\": \"200\"\n            }\n        ],\n        \"RootVatItems\": [\n            {\n                \"C\": \"200\"\n            }\n        ],\n        \"LazyId\": 1,\n        \"Change\": 0,\n        \"RoundValue\": 0,\n        \"GTotal\": 200,\n        \"Payments\": [],\n        \"SummaryId\": null\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Storno - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "Pay.Payments[0].Amount",
+											"value": "-4970",
+											"type": "text"
+										},
+										{
+											"key": "Pay.Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "2",
+											"description": "A nyomtatandó példányszám (minimum 2)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.CustomerId",
+											"value": "C-00001",
+											"description": "Egyedi vevőazonosító (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.Name",
+											"value": "Teszt Vásárló",
+											"description": "Vásárló neve (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.PostalCode",
+											"value": "8640",
+											"description": "Irányítószám (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.City",
+											"value": "Fonyód",
+											"description": "Település neve (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.PublicPlaceName",
+											"value": "Fő",
+											"description": "Közterület neve (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.PublicPlaceType",
+											"value": "utca",
+											"description": "Közterület jellege (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.HouseNumber",
+											"value": "29.",
+											"description": "Házszám (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.TaxNumber",
+											"value": "12345678-1-23",
+											"description": "Vásárló adószáma (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.OriginalDate",
+											"value": "2020.02.03.",
+											"description": "Eredeti bizonylat dátuma",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.OriginalNumber",
+											"value": "NY/Y00300045/0007/00001",
+											"description": "Eredeti bizonylat száma\n - SZ/ = az eredeti bizonylat jelölése => egyszerűsített számla  \n - NY/ = az eredeti bizonylat jelölése => nyugta",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.OriginalOid",
+											"value": "0",
+											"description": "Opcionális\n - Az eredeti bizonylat egyedi azonosítója az AEE-ben és a gyorsabb bizonylat visszakeresést biztosít",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.StornoReason",
+											"value": "Hibás termékek",
+											"description": "Visszáru oka",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.StornoType",
+											"value": "0",
+											"description": "NAV  kód\n - 0 = \"V1\" - hibás áru\n - 1 = \"V2\" - ügyfél elállása a vásárlástól\n - 2 = \"V3\" - egyéb",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/Storno",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"Storno"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "LazyToStorno - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "LazyId",
+													"value": "1",
+													"description": "Kosár azonosító, ha nincs kosár, akkor mindig 1",
+													"type": "text"
+												},
+												{
+													"key": "Pay.Payments[0].Amount",
+													"value": "-800",
+													"type": "text"
+												},
+												{
+													"key": "Pay.Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "2",
+													"description": "A nyomtatandó példányszám (minimum 2)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.CustomerId",
+													"value": "C-00001",
+													"description": "Egyedi vevőazonosító (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.Name",
+													"value": "Teszt Vásárló",
+													"description": "Vásárló neve (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.PostalCode",
+													"value": "8640",
+													"description": "Irányítószám (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.City",
+													"value": "Fonyód",
+													"description": "Település neve (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.PublicPlaceName",
+													"value": "Fő",
+													"description": "Közterület neve (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.PublicPlaceType",
+													"value": "utca",
+													"description": "Közterület jellege (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.HouseNumber",
+													"value": "29.",
+													"description": "Házszám (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.TaxNumber",
+													"value": "12345678-1-23",
+													"description": "Vásárló adószáma (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.OriginalDate",
+													"value": "2020.01.28.",
+													"description": "Eredeti bizonylat dátuma",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.OriginalNumber",
+													"value": "SZ/Y00300045/0003/00002",
+													"description": "Eredeti bizonylat száma\n - SZ/ = az eredeti bizonylat jelölése => egyszerűsített számla  \n - NY/ = az eredeti bizonylat jelölése => nyugta",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.OriginalOid",
+													"value": "0",
+													"description": "Opcionális\n - Az eredeti bizonylat egyedi azonosítója az AEE-ben és a gyorsabb bizonylat visszakeresést biztosít",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.StornoReason",
+													"value": "Hibás termék",
+													"description": "Visszáru oka",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.StornoType",
+													"value": "0",
+													"description": "NAV  kód\n - 0 = \"V1\" - hibás áru\n - 1 = \"V2\" - ügyfél elállása a vásárlástól\n - 2 = \"V3\" - egyéb",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/LazyToStorno",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"LazyToStorno"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3679"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TStorno\",\n    \"Result\": {\n        \"Oid\": 2,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CreateDT\": \"2020-02-06T10:10:38\",\n        \"CloseDT\": \"2020-02-06T10:37:44\",\n        \"CopyCount\": 2,\n        \"DocNumber\": \"S/Y00300045/0011/00001\",\n        \"DocNumberExt\": \"S/Y00300045/0011/00001\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"97CB5\",\n        \"Owner\": 0,\n        \"Uid\": 103,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"SellItems\": [\n            {\n                \"ItemTypeToNav\": \"s\",\n                \"SummaryItemTypeToNav\": \"xs\",\n                \"IsProduct\": true,\n                \"ItemIndex\": 0,\n                \"ProductOid\": 0,\n                \"ProductCode\": null,\n                \"ProductName\": \"Teszt termék\",\n                \"ItemType\": 32,\n                \"Qty\": -1,\n                \"UnitName\": \"db\",\n                \"Gup\": 100,\n                \"Gp\": -100,\n                \"VatCode\": \"C00\",\n                \"ReturnQty\": 0,\n                \"LinkIndex\": 0,\n                \"Owner\": 0,\n                \"PrintProductCode\": false,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null,\n                \"SubTotal\": 0,\n                \"PrintIndex\": 0\n            },\n            {\n                \"ItemTypeToNav\": \"s\",\n                \"SummaryItemTypeToNav\": \"xs\",\n                \"IsProduct\": true,\n                \"ItemIndex\": 1,\n                \"ProductOid\": 0,\n                \"ProductCode\": null,\n                \"ProductName\": \"Teszt termék\",\n                \"ItemType\": 32,\n                \"Qty\": -1,\n                \"UnitName\": \"db\",\n                \"Gup\": 200,\n                \"Gp\": -200,\n                \"VatCode\": \"C20\",\n                \"ReturnQty\": 0,\n                \"LinkIndex\": 0,\n                \"Owner\": 0,\n                \"PrintProductCode\": false,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null,\n                \"SubTotal\": 0,\n                \"PrintIndex\": 0\n            },\n            {\n                \"ItemTypeToNav\": \"s\",\n                \"SummaryItemTypeToNav\": \"xs\",\n                \"IsProduct\": true,\n                \"ItemIndex\": 2,\n                \"ProductOid\": 0,\n                \"ProductCode\": null,\n                \"ProductName\": \"Teszt termék\",\n                \"ItemType\": 32,\n                \"Qty\": -1,\n                \"UnitName\": \"db\",\n                \"Gup\": 200,\n                \"Gp\": -200,\n                \"VatCode\": \"C20\",\n                \"ReturnQty\": 0,\n                \"LinkIndex\": 0,\n                \"Owner\": 0,\n                \"PrintProductCode\": false,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null,\n                \"SubTotal\": 0,\n                \"PrintIndex\": 0\n            },\n            {\n                \"ItemTypeToNav\": \"s\",\n                \"SummaryItemTypeToNav\": \"xs\",\n                \"IsProduct\": true,\n                \"ItemIndex\": 3,\n                \"ProductOid\": 0,\n                \"ProductCode\": null,\n                \"ProductName\": \"Teszt termék\",\n                \"ItemType\": 32,\n                \"Qty\": -1,\n                \"UnitName\": \"db\",\n                \"Gup\": 300,\n                \"Gp\": -300,\n                \"VatCode\": \"A70\",\n                \"ReturnQty\": 0,\n                \"LinkIndex\": 0,\n                \"Owner\": 0,\n                \"PrintProductCode\": false,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null,\n                \"SubTotal\": -800,\n                \"PrintIndex\": 0\n            }\n        ],\n        \"SellId\": \"0/000002\",\n        \"OriginalSellItems\": [],\n        \"UpdatedSellItems\": [],\n        \"SellStatus\": \"Total\",\n        \"SellItemTypeCounts\": [\n            {\n                \"Storno\": \"4\"\n            }\n        ],\n        \"SellItemTypes\": [\n            {\n                \"Storno\": \"-800\"\n            }\n        ],\n        \"VatItems\": [\n            {\n                \"C00\": \"-100\",\n                \"C20\": \"-400\",\n                \"A70\": \"-300\"\n            }\n        ],\n        \"RootVatItems\": [\n            {\n                \"C\": \"-500\",\n                \"A\": \"-300\"\n            }\n        ],\n        \"LazyId\": 1,\n        \"Change\": 0,\n        \"RoundValue\": 0,\n        \"GTotal\": -800,\n        \"Payments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": -800,\n                \"ExchangeRate\": 1,\n                \"Value\": -800,\n                \"Info\": \"\",\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ]\n    }\n}"
+								}
+							]
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -4217,7 +5068,7 @@
 										},
 										{
 											"key": "Payments[0].Amount",
-											"value": "10000",
+											"value": "100000",
 											"description": "0. fizetéshez tartozó összeg",
 											"type": "text"
 										},
@@ -4458,6 +5309,141 @@
 									],
 									"path": [
 										"CashReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashReport - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashReport",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashReport"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2817"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TCashReport\",\n    \"Result\": {\n        \"Oid\": 39,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CloseDT\": \"2020-02-03T15:46:47\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"0006\",\n        \"DocNumberExt\": \"0006\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"23CDE\",\n        \"Owner\": 0,\n        \"Uid\": 62,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"Traffic\": 23200,\n        \"OtherIncome\": 18416.64,\n        \"TotalIncome\": 41616.64,\n        \"Storno\": 0,\n        \"Return\": 0,\n        \"Empties\": 0,\n        \"OtherExpenses\": 0,\n        \"TotalExpenses\": 0,\n        \"CashTraffic\": 41616.64,\n        \"TotalRound\": 0,\n        \"CashAmount\": 41616.64,\n        \"ServiceFee\": 0,\n        \"FuelCard\": 0,\n        \"FuelCardStorno\": 0,\n        \"HealthCard\": 0,\n        \"HealthCardStorno\": 0,\n        \"CashTotal\": 41616.64,\n        \"ReceiptBrokenCount\": 0,\n        \"ReceiptBroken\": 0,\n        \"ItemStornoCount\": 0,\n        \"ItemStorno\": 0,\n        \"FuelCardReturn\": 0,\n        \"HealthCardReturn\": 0,\n        \"Payments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 33200,\n                \"ExchangeRate\": 1,\n                \"Value\": 33200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"DailyOpenPayments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 10000,\n                \"ExchangeRate\": 1,\n                \"Value\": 10000,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"TrafficPayments\": [\n            {\n                \"Owner\": 2,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 23200,\n                \"ExchangeRate\": 1,\n                \"Value\": 23200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"CashInOutPayments\": []\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "SellReport - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										},
+										{
+											"key": "CloseNumberFrom",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "CloseNumberTo",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/SellReport",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"SellReport"
 									]
 								}
 							},
@@ -5305,6 +6291,378 @@
 									],
 									"cookie": [],
 									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TAeeStatus</ResultType>\n    <Result xsi:type=\"TAeeStatus\">\n        <BatteryLevel>98</BatteryLevel>\n        <BatteryStatus>Full</BatteryStatus>\n        <CustomerDisplayStatus>Online</CustomerDisplayStatus>\n        <DrawerSensor>Unknown</DrawerSensor>\n        <GsmDT>2020-02-07T18:15:02</GsmDT>\n        <GsmGprsRegistration>True</GsmGprsRegistration>\n        <GsmLevel>-79</GsmLevel>\n        <GsmOperatorInfo> 1,2,\"21601\",2</GsmOperatorInfo>\n        <GsmPdpContext>True</GsmPdpContext>\n        <GsmStatus>Offline</GsmStatus>\n        <LicenceExpire>0001-01-01T00:00:00</LicenceExpire>\n        <LicenceExtension>None</LicenceExtension>\n        <LicenceVersion>Not installed.</LicenceVersion>\n        <PkiCertInstalled>No</PkiCertInstalled>\n        <PowerStatus>On</PowerStatus>\n        <PrinterStatusExt>Online</PrinterStatusExt>\n        <RamAvailable>21946368</RamAvailable>\n        <SDFree>15887425536</SDFree>\n        <SDUsed>3903488</SDUsed>\n        <ShutdownLevel>20</ShutdownLevel>\n        <WorkStatus>Ok</WorkStatus>\n    </Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "GetXml - Response XML",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "JournalId",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "Count",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/GetXml",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"GetXml"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetXml - Response XML",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/GetXml",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"GetXml"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "22756"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TDownload</ResultType>\n    <Result xsi:type=\"TDownload\">\n        <Name>Y00300045.p7b.zip</Name>\n        <Content>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</Content>\n    </Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "ExportXmlToUsb - Response XML",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "JournalId",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "Count",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/ExportXmlToUsb",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"ExportXmlToUsb"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ExportXmlToUsb - Response XML",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/ExportXmlToUsb",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"ExportXmlToUsb"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "289"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>String</ResultType>\n    <Result xsi:type=\"xsd:string\">Sikeresen másolt fájlok száma: 5</Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "AeeDataReport - Response XML",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/AeeDataReport",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"AeeDataReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "AeeDataReport - Response XML",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/AeeDataReport",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"AeeDataReport"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "261"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>String</ResultType>\n    <Result xsi:type=\"xsd:string\">success</Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "SetLicence - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "Licence",
+											"type": "file",
+											"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Y00300045/Y00300045 LM SIU QR.lic.enc"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/SetLicence",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"SetLicence"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SetLicence - Response XML",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "Licence",
+													"type": "file",
+													"src": "/Volumes/Source/AEE/AEE- CashRegisterInfo/Y003/Y00300045/Y00300045 LM SIU QR.lic.enc"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/SetLicence",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"SetLicence"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "261"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>String</ResultType>\n    <Result xsi:type=\"xsd:string\">success</Result>\n</TResponse>"
 								}
 							]
 						}
@@ -8332,6 +9690,307 @@
 									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TSummary</ResultType>\n    <Result xsi:type=\"TSummary\">\n        <Oid>3</Oid>\n        <Barcode>auto</Barcode>\n        <ClerkCode />\n        <ClerkName />\n        <CreateDT>2020-02-06T19:36:51</CreateDT>\n        <CloseDT>2020-02-06T19:37:10</CloseDT>\n        <CopyCount>1</CopyCount>\n        <DocNumber>F/0011/00001</DocNumber>\n        <DocNumberExt>F/0011/00001</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>FDC5C</NavCode>\n        <Owner>0</Owner>\n        <Uid>117</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n        <SellItems xsi:type=\"List&lt;TSellItem&gt;\">\n            <Item>\n                <ItemTypeToNav />\n                <SummaryItemTypeToNav>x</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>0</ItemType>\n                <Qty>2</Qty>\n                <UnitName>db</UnitName>\n                <Gup>1000</Gup>\n                <Gp>2000</Gp>\n                <VatCode>C60</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n        </SellItems>\n        <SellId>0/000003</SellId>\n        <OriginalSellItems xsi:type=\"List&lt;TSellItem&gt;\" />\n        <UpdatedSellItems xsi:type=\"List&lt;TSellItem&gt;\" />\n        <SellStatus>Total</SellStatus>\n        <SellItemTypeCounts xsi:type=\"Dictionary&lt;TSellItemType, Int32&gt;\">\n            <Item>\n                <Key>Sell</Key>\n                <Value>1</Value>\n            </Item>\n        </SellItemTypeCounts>\n        <SellItemTypes xsi:type=\"Dictionary&lt;TSellItemType, Double&gt;\">\n            <Item>\n                <Key>Sell</Key>\n                <Value>2000</Value>\n            </Item>\n        </SellItemTypes>\n        <VatItems xsi:type=\"Dictionary&lt;String, Double&gt;\">\n            <Item>\n                <Key>C60</Key>\n                <Value>2000</Value>\n            </Item>\n        </VatItems>\n        <RootVatItems xsi:type=\"Dictionary&lt;Char, Double&gt;\">\n            <Item>\n                <Key>C</Key>\n                <Value>2000</Value>\n            </Item>\n        </RootVatItems>\n        <LazyId>1</LazyId>\n        <Change>0</Change>\n        <RoundValue>0</RoundValue>\n        <GTotal>2000</GTotal>\n        <Payments xsi:type=\"List&lt;TPayment&gt;\" />\n        <SummaryId />\n    </Result>\n</TResponse>"
 								}
 							]
+						},
+						{
+							"name": "Storno - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "Pay.Payments[0].Amount",
+											"value": "-4970",
+											"type": "text"
+										},
+										{
+											"key": "Pay.Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "2",
+											"description": "A nyomtatandó példányszám (minimum 2)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.CustomerId",
+											"value": "C-00001",
+											"description": "Egyedi vevőazonosító (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.Name",
+											"value": "Teszt Vásárló",
+											"description": "Vásárló neve (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.PostalCode",
+											"value": "8640",
+											"description": "Irányítószám (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.City",
+											"value": "Fonyód",
+											"description": "Település neve (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.PublicPlaceName",
+											"value": "Fő",
+											"description": "Közterület neve (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.PublicPlaceType",
+											"value": "utca",
+											"description": "Közterület jellege (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.HouseNumber",
+											"value": "29.",
+											"description": "Házszám (XML-ben max. 50 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "Customer.TaxNumber",
+											"value": "12345678-1-23",
+											"description": "Vásárló adószáma (XML-ben max. 20 karakter)",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.OriginalDate",
+											"value": "2020.02.03.",
+											"description": "Eredeti bizonylat dátuma",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.OriginalNumber",
+											"value": "NY/Y00300045/0008/00003",
+											"description": "Eredeti bizonylat száma\n - SZ/ = az eredeti bizonylat jelölése => egyszerűsített számla  \n - NY/ = az eredeti bizonylat jelölése => nyugta",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.OriginalOid",
+											"value": "0",
+											"description": "Opcionális\n - Az eredeti bizonylat egyedi azonosítója az AEE-ben és a gyorsabb bizonylat visszakeresést biztosít",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.StornoReason",
+											"value": "Hibás termékek",
+											"description": "Visszáru oka",
+											"type": "text"
+										},
+										{
+											"key": "StornoInfo.StornoType",
+											"value": "0",
+											"description": "NAV  kód\n - 0 = \"V1\" - hibás áru\n - 1 = \"V2\" - ügyfél elállása a vásárlástól\n - 2 = \"V3\" - egyéb",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/Storno",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"Storno"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Storno - Response XML",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "Pay.Payments[0].Amount",
+													"value": "-4970",
+													"type": "text"
+												},
+												{
+													"key": "Pay.Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "2",
+													"description": "A nyomtatandó példányszám (minimum 2)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.CustomerId",
+													"value": "C-00001",
+													"description": "Egyedi vevőazonosító (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.Name",
+													"value": "Teszt Vásárló",
+													"description": "Vásárló neve (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.PostalCode",
+													"value": "8640",
+													"description": "Irányítószám (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.City",
+													"value": "Fonyód",
+													"description": "Település neve (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.PublicPlaceName",
+													"value": "Fő",
+													"description": "Közterület neve (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.PublicPlaceType",
+													"value": "utca",
+													"description": "Közterület jellege (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.HouseNumber",
+													"value": "29.",
+													"description": "Házszám (XML-ben max. 50 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "Customer.TaxNumber",
+													"value": "12345678-1-23",
+													"description": "Vásárló adószáma (XML-ben max. 20 karakter)",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.OriginalDate",
+													"value": "2020.02.03.",
+													"description": "Eredeti bizonylat dátuma",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.OriginalNumber",
+													"value": "NY/Y00300045/0008/00003",
+													"description": "Eredeti bizonylat száma\n - SZ/ = az eredeti bizonylat jelölése => egyszerűsített számla  \n - NY/ = az eredeti bizonylat jelölése => nyugta",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.OriginalOid",
+													"value": "0",
+													"description": "Opcionális\n - Az eredeti bizonylat egyedi azonosítója az AEE-ben és a gyorsabb bizonylat visszakeresést biztosít",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.StornoReason",
+													"value": "Hibás termékek",
+													"description": "Visszáru oka",
+													"type": "text"
+												},
+												{
+													"key": "StornoInfo.StornoType",
+													"value": "0",
+													"description": "NAV  kód\n - 0 = \"V1\" - hibás áru\n - 1 = \"V2\" - ügyfél elállása a vásárlástól\n - 2 = \"V3\" - egyéb",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/Storno",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"Storno"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "6510"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TStorno</ResultType>\n    <Result xsi:type=\"TStorno\">\n        <Oid>9</Oid>\n        <Barcode>auto</Barcode>\n        <ClerkCode />\n        <ClerkName />\n        <CreateDT>2020-02-12T20:41:18</CreateDT>\n        <CloseDT>2020-02-12T20:41:18</CloseDT>\n        <CopyCount>2</CopyCount>\n        <DocNumber>S/Y00300045/0012/00005</DocNumber>\n        <DocNumberExt>S/Y00300045/0012/00005</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>FFC48</NavCode>\n        <Owner>0</Owner>\n        <Uid>129</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n        <SellItems xsi:type=\"List&lt;TSellItem&gt;\">\n            <Item>\n                <ItemTypeToNav>s</ItemTypeToNav>\n                <SummaryItemTypeToNav>xs</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>32</ItemType>\n                <Qty>-2</Qty>\n                <UnitName>db</UnitName>\n                <Gup>100</Gup>\n                <Gp>-200</Gp>\n                <VatCode>C00</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n            <Item>\n                <ItemTypeToNav>s</ItemTypeToNav>\n                <SummaryItemTypeToNav>xs</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>32</ItemType>\n                <Qty>-2</Qty>\n                <UnitName>db</UnitName>\n                <Gup>200</Gup>\n                <Gp>-400</Gp>\n                <VatCode>C20</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n            <Item>\n                <ItemTypeToNav>s</ItemTypeToNav>\n                <SummaryItemTypeToNav>xs</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>32</ItemType>\n                <Qty>-1</Qty>\n                <UnitName>db</UnitName>\n                <Gup>300</Gup>\n                <Gp>-300</Gp>\n                <VatCode>A00</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n            <Item>\n                <ItemTypeToNav>s</ItemTypeToNav>\n                <SummaryItemTypeToNav>xs</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>32</ItemType>\n                <Qty>-3</Qty>\n                <UnitName>db</UnitName>\n                <Gup>400</Gup>\n                <Gp>-1200</Gp>\n                <VatCode>B00</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n            <Item>\n                <ItemTypeToNav>s</ItemTypeToNav>\n                <SummaryItemTypeToNav>xs</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>32</ItemType>\n                <Qty>-3</Qty>\n                <UnitName>db</UnitName>\n                <Gup>450</Gup>\n                <Gp>-1350</Gp>\n                <VatCode>E00</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n        </SellItems>\n        <SellId>0/000009</SellId>\n        <OriginalSellItems xsi:type=\"List&lt;TSellItem&gt;\" />\n        <UpdatedSellItems xsi:type=\"List&lt;TSellItem&gt;\" />\n        <SellStatus>Total</SellStatus>\n        <SellItemTypeCounts xsi:type=\"Dictionary&lt;TSellItemType, Int32&gt;\">\n            <Item>\n                <Key>Storno</Key>\n                <Value>5</Value>\n            </Item>\n        </SellItemTypeCounts>\n        <SellItemTypes xsi:type=\"Dictionary&lt;TSellItemType, Double&gt;\">\n            <Item>\n                <Key>Storno</Key>\n                <Value>-3450</Value>\n            </Item>\n        </SellItemTypes>\n        <VatItems xsi:type=\"Dictionary&lt;String, Double&gt;\">\n            <Item>\n                <Key>C00</Key>\n                <Value>-200</Value>\n            </Item>\n            <Item>\n                <Key>C20</Key>\n                <Value>-400</Value>\n            </Item>\n            <Item>\n                <Key>A00</Key>\n                <Value>-300</Value>\n            </Item>\n            <Item>\n                <Key>B00</Key>\n                <Value>-1200</Value>\n            </Item>\n            <Item>\n                <Key>E00</Key>\n                <Value>-1350</Value>\n            </Item>\n        </VatItems>\n        <RootVatItems xsi:type=\"Dictionary&lt;Char, Double&gt;\">\n            <Item>\n                <Key>C</Key>\n                <Value>-600</Value>\n            </Item>\n            <Item>\n                <Key>A</Key>\n                <Value>-300</Value>\n            </Item>\n            <Item>\n                <Key>B</Key>\n                <Value>-1200</Value>\n            </Item>\n            <Item>\n                <Key>E</Key>\n                <Value>-1350</Value>\n            </Item>\n        </RootVatItems>\n        <LazyId>0</LazyId>\n        <Change>50</Change>\n        <RoundValue>0</RoundValue>\n        <GTotal>-3450</GTotal>\n        <Payments xsi:type=\"List&lt;TPayment&gt;\">\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>0</PaymentMediaIndex>\n                <Amount>-3500</Amount>\n                <ExchangeRate>1</ExchangeRate>\n                <Value>-3500</Value>\n                <Info />\n                <BeforePlainText />\n                <AfterPlainText />\n            </Item>\n        </Payments>\n    </Result>\n</TResponse>"
+								}
+							]
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -9003,7 +10662,7 @@
 	],
 	"variable": [
 		{
-			"id": "138d75a2-b9e5-4678-b5df-8e02c12af5fe",
+			"id": "de54be8f-0c50-4018-9c1f-f9c606cabb94",
 			"key": "AEE208",
 			"value": "192.168.1.45:8080",
 			"type": "string"
