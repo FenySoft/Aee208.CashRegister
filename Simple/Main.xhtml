@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <script src="aee.js" async="async" defer="defer"></script>
+  <title>CP KASSZA 2020</title>
+</head>
+<body>
+  <form method="get" action="DailyOpen.xhtml" enctype="application/x-www-form-urlencoded">
+    <h1>
+      CP KASSZA 2020
+    </h1>
+    <div>
+      <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
+      <button class="button" type="submit" >Nap nyitás</button>
+    </div>
+  </form>
+  <form method="get" action="DailyClose.xhtml" enctype="application/x-www-form-urlencoded">
+    <div>
+      <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
+      <button class="button" type="submit" >Nap zárás</button>
+    </div>
+  </form>
+</body>
+</html>

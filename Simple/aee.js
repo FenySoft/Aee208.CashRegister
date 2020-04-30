@@ -1,3 +1,8 @@
+function Cancel()
+{
+  window.history.back();
+}
+
 function SessionIdGet()
 {
   return localStorage.SessionId;
