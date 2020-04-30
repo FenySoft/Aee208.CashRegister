@@ -8507,6 +8507,120 @@
 					"name": "Documents",
 					"item": [
 						{
+							"name": "AeeDataReport - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/AeeDataReport",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"AeeDataReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "AeeDataReport - Response JSON",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/AeeDataReport",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"AeeDataReport"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Break Command - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "A",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "BreakMethod",
+											"value": "2",
+											"description": "Break parancs végrehajtásának módja\n - 0 = Kompatibilis működést biztosít a parancs korábbi változatával\n - 1 = Bizonylat megszakítás \n - 2 = Parancs megszakítás\n - 3 = Slip nyomtatás megszakítása\n - 4 = Bizonylat megszakítás nyomtatás nélkül [Verzió: 3.2.1.17]\n",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/Break",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"Break"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Break Document - Response JSON",
 							"request": {
 								"method": "POST",
@@ -8620,7 +8734,7 @@
 							]
 						},
 						{
-							"name": "Break Command - Response JSON",
+							"name": "DailyClose - Response JSON",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -8631,7 +8745,7 @@
 										"value": "application/x-www-form-urlencoded"
 									},
 									{
-										"key": "A",
+										"key": "Accept",
 										"value": "application/json",
 										"type": "text"
 									}
@@ -8646,25 +8760,103 @@
 											"type": "text"
 										},
 										{
-											"key": "BreakMethod",
-											"value": "2",
-											"description": "Break parancs végrehajtásának módja\n - 0 = Kompatibilis működést biztosít a parancs korábbi változatával\n - 1 = Bizonylat megszakítás \n - 2 = Parancs megszakítás\n - 3 = Slip nyomtatás megszakítása\n - 4 = Bizonylat megszakítás nyomtatás nélkül [Verzió: 3.2.1.17]\n",
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://{{AEE208}}/Break",
+									"raw": "http://{{AEE208}}/DailyClose",
 									"protocol": "http",
 									"host": [
 										"{{AEE208}}"
 									],
 									"path": [
-										"Break"
+										"DailyClose"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "DailyClose - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/DailyClose",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"DailyClose"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TDailyClose\",\n    \"Result\": {\n        \"Oid\": 11,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CreateDT\": \"2020-02-06T19:39:26\",\n        \"CloseDT\": \"2020-02-06T19:39:26\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"0011\",\n        \"DocNumberExt\": \"0011\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"0D58A\",\n        \"Owner\": 0,\n        \"Uid\": 120,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"Traffic\": 5550,\n        \"Surcharge\": 0,\n        \"StornoSellItem\": 0,\n        \"Discount\": 0,\n        \"ReturnSellItem\": 0,\n        \"EmptiesSellItem\": -200,\n        \"ReceiptCount\": 3,\n        \"InvoiceCount\": 3,\n        \"ReceiptAndInvoiceCount\": 6,\n        \"BreakCount\": 1,\n        \"StornoCount\": 3,\n        \"Storno\": -1000,\n        \"ReturnCount\": 5,\n        \"EmptiesCount\": 1,\n        \"Return\": -2100,\n        \"GT\": 73320,\n        \"VatItems\": [\n            {\n                \"C00\": \"400\",\n                \"A20\": \"200\",\n                \"B40\": \"400\",\n                \"C55\": \"550\",\n                \"C60\": \"4000\"\n            }\n        ],\n        \"RootVatItems\": [\n            {\n                \"C\": \"4950\",\n                \"A\": \"200\",\n                \"B\": \"400\"\n            }\n        ],\n        \"NotBusinessDiscount\": 0,\n        \"StornoVatItems\": [\n            {\n                \"C00\": \"-100\"\n            }\n        ],\n        \"ReturnVatItems\": [\n            {\n                \"C00\": \"-200\"\n            }\n        ],\n        \"EmptiesVatItems\": [\n            {\n                \"C00\": \"-100\"\n            }\n        ],\n        \"CashInCount\": 0,\n        \"CashOutCount\": 0,\n        \"PaymentExchangeCount\": 0,\n        \"CashInOutCount\": 0,\n        \"Empties\": -100\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "DailyOpen - Response JSON",
@@ -8888,6 +9080,645 @@
 							]
 						},
 						{
+							"name": "CashIn - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "CashInType",
+											"value": "0",
+											"description": "TCashInType lehetséges értékei:\n- StartingCash\t= 0x00\t// „01 - váltópénz bevitel”\n- CashierDeposit\t= 0x01\t// „02 - pénztáros pénzfelvétel”\n- Tolling\t\t\t= 0x02\t// „03 - díjbeszedés”\n- ScratchSale\t\t= 0x03\t// „04 - sorsjegy eladás”\n- Advance\t\t= 0x04\t// „05 - előleg”\n- CashShortage\t= 0x05\t// „06 - pénztárhiány”\n- Qratuity\t\t= 0x06\t// „07 - borravaló”\n- OtherPayments\t= 0x07\t// „08 - egyéb befizetés”\n",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Amount",
+											"value": "100000",
+											"description": "0. fizetéshez tartozó összeg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Info",
+											"value": "Váltópénz",
+											"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"description": "0. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text"
+										},
+										{
+											"key": "Payments[2].Amount",
+											"value": "200",
+											"description": "Opcionális - 1. fizetéshez tartozó összeg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].PaymentMediaIndex",
+											"value": "2",
+											"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].Info",
+											"value": "Váltópénz",
+											"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Amount",
+											"value": "30",
+											"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].PaymentMediaIndex",
+											"value": "1",
+											"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Info",
+											"value": "Váltópénz",
+											"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/CashIn",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"CashIn"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashIn - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "CashInType",
+													"value": "0",
+													"description": "TCashInType lehetséges értékei:\n- StartingCash\t= 0x00\t// „01 - váltópénz bevitel”\n- CashierDeposit\t= 0x01\t// „02 - pénztáros pénzfelvétel”\n- Tolling\t\t\t= 0x02\t// „03 - díjbeszedés”\n- ScratchSale\t\t= 0x03\t// „04 - sorsjegy eladás”\n- Advance\t\t= 0x04\t// „05 - előleg”\n- CashShortage\t= 0x05\t// „06 - pénztárhiány”\n- Qratuity\t\t= 0x06\t// „07 - borravaló”\n- OtherPayments\t= 0x07\t// „08 - egyéb befizetés”\n",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Amount",
+													"value": "100000",
+													"description": "0. fizetéshez tartozó összeg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Info",
+													"value": "Váltópénz",
+													"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"description": "0. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text"
+												},
+												{
+													"key": "Payments[2].Amount",
+													"value": "200",
+													"description": "Opcionális - 1. fizetéshez tartozó összeg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].PaymentMediaIndex",
+													"value": "2",
+													"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].Info",
+													"value": "Váltópénz",
+													"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Amount",
+													"value": "30",
+													"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].PaymentMediaIndex",
+													"value": "1",
+													"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Info",
+													"value": "Váltópénz",
+													"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashIn",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashIn"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "503"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TCashIn\",\n    \"Result\": {\n        \"Oid\": 1,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CreateDT\": \"2020-04-30T11:26:27\",\n        \"CloseDT\": \"2020-04-30T11:26:27\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"M/2186/00001\",\n        \"DocNumberExt\": \"M/Y00300005/2186/00001\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"291A0\",\n        \"Owner\": 2,\n        \"Uid\": 2058153,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "CashOut - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "CashOutType",
+											"value": "0",
+											"description": "TCashOutType lehetséges értékei\n- Skim\t\t\t\t\t= 0x00\t// „31 - fölözés”\n- CashierWithdrawal\t\t= 0x01\t// „32 - pénztáros levétel”\n- VoucherWithdrawal\t\t= 0x02\t// „33 - utalvány kivét”\n- GiftCardWithdrawal\t\t= 0x03\t// „34 - Ajándékkártya kivét”\n- SalaryPayment\t\t\t= 0x04\t// „35 - bérkifizetés”\n- SalaryAdvance\t\t\t= 0x05\t// „36 - munkabér előleg”\n- PostalFee\t\t\t\t= 0x06\t// „37 - postaköltség”\n- OtherOverheadCost\t\t= 0x07\t// „38 - egyéb rezsi”\n- BuyGoods\t\t\t\t= 0x08\t// „39 - áruvásárlás”\n- FinalAmountWithdrawal\t= 0x09\t// „40 – záró összeg levétel”\n- OtherWithdrawal\t\t= 0x0A\t// „41 - egyéb kifizetés”",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Amount",
+											"value": "-1000",
+											"description": "0. fizetéshez tartozó összeg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Info",
+											"value": "Fölözés",
+											"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"description": "0. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text"
+										},
+										{
+											"key": "Payments[2].Amount",
+											"value": "200",
+											"description": "Opcionális - 1. fizetéshez tartozó összeg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].PaymentMediaIndex",
+											"value": "2",
+											"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].Info",
+											"value": "Fölözés",
+											"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Amount",
+											"value": "30",
+											"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].PaymentMediaIndex",
+											"value": "1",
+											"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Info",
+											"value": "Fölözés",
+											"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/CashOut",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"CashOut"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashOut - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "CashOutType",
+													"value": "0",
+													"description": "TCashOutType lehetséges értékei\n- Skim\t\t\t\t\t= 0x00\t// „31 - fölözés”\n- CashierWithdrawal\t\t= 0x01\t// „32 - pénztáros levétel”\n- VoucherWithdrawal\t\t= 0x02\t// „33 - utalvány kivét”\n- GiftCardWithdrawal\t\t= 0x03\t// „34 - Ajándékkártya kivét”\n- SalaryPayment\t\t\t= 0x04\t// „35 - bérkifizetés”\n- SalaryAdvance\t\t\t= 0x05\t// „36 - munkabér előleg”\n- PostalFee\t\t\t\t= 0x06\t// „37 - postaköltség”\n- OtherOverheadCost\t\t= 0x07\t// „38 - egyéb rezsi”\n- BuyGoods\t\t\t\t= 0x08\t// „39 - áruvásárlás”\n- FinalAmountWithdrawal\t= 0x09\t// „40 – záró összeg levétel”\n- OtherWithdrawal\t\t= 0x0A\t// „41 - egyéb kifizetés”",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Amount",
+													"value": "-1000",
+													"description": "0. fizetéshez tartozó összeg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Info",
+													"value": "Fölözés",
+													"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"description": "0. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text"
+												},
+												{
+													"key": "Payments[2].Amount",
+													"value": "200",
+													"description": "Opcionális - 1. fizetéshez tartozó összeg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].PaymentMediaIndex",
+													"value": "2",
+													"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].Info",
+													"value": "Fölözés",
+													"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Amount",
+													"value": "30",
+													"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].PaymentMediaIndex",
+													"value": "1",
+													"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Info",
+													"value": "Fölözés",
+													"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashOut",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashOut"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "504"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TCashOut\",\n    \"Result\": {\n        \"Oid\": 1,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CreateDT\": \"2020-04-30T11:36:22\",\n        \"CloseDT\": \"2020-04-30T11:36:22\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"M/2186/00003\",\n        \"DocNumberExt\": \"M/Y00300005/2186/00003\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"909A4\",\n        \"Owner\": 2,\n        \"Uid\": 2058155,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "CashReport - Response JSON",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/CashReport",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"CashReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashReport - Response JSON",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashReport",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashReport"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2817"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TCashReport\",\n    \"Result\": {\n        \"Oid\": 39,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CloseDT\": \"2020-02-03T15:46:47\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"0006\",\n        \"DocNumberExt\": \"0006\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"23CDE\",\n        \"Owner\": 0,\n        \"Uid\": 62,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"Traffic\": 23200,\n        \"OtherIncome\": 18416.64,\n        \"TotalIncome\": 41616.64,\n        \"Storno\": 0,\n        \"Return\": 0,\n        \"Empties\": 0,\n        \"OtherExpenses\": 0,\n        \"TotalExpenses\": 0,\n        \"CashTraffic\": 41616.64,\n        \"TotalRound\": 0,\n        \"CashAmount\": 41616.64,\n        \"ServiceFee\": 0,\n        \"FuelCard\": 0,\n        \"FuelCardStorno\": 0,\n        \"HealthCard\": 0,\n        \"HealthCardStorno\": 0,\n        \"CashTotal\": 41616.64,\n        \"ReceiptBrokenCount\": 0,\n        \"ReceiptBroken\": 0,\n        \"ItemStornoCount\": 0,\n        \"ItemStorno\": 0,\n        \"FuelCardReturn\": 0,\n        \"HealthCardReturn\": 0,\n        \"Payments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 33200,\n                \"ExchangeRate\": 1,\n                \"Value\": 33200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"DailyOpenPayments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 10000,\n                \"ExchangeRate\": 1,\n                \"Value\": 10000,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"TrafficPayments\": [\n            {\n                \"Owner\": 2,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 23200,\n                \"ExchangeRate\": 1,\n                \"Value\": 23200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"CashInOutPayments\": []\n    }\n}"
+								}
+							]
+						},
+						{
 							"name": "SellReport - Response JSON",
 							"request": {
 								"method": "POST",
@@ -9019,323 +9850,6 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TCashReport\",\n    \"Result\": {\n        \"Oid\": 39,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CloseDT\": \"2020-02-03T15:46:47\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"0006\",\n        \"DocNumberExt\": \"0006\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"23CDE\",\n        \"Owner\": 0,\n        \"Uid\": 62,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"Traffic\": 23200,\n        \"OtherIncome\": 18416.64,\n        \"TotalIncome\": 41616.64,\n        \"Storno\": 0,\n        \"Return\": 0,\n        \"Empties\": 0,\n        \"OtherExpenses\": 0,\n        \"TotalExpenses\": 0,\n        \"CashTraffic\": 41616.64,\n        \"TotalRound\": 0,\n        \"CashAmount\": 41616.64,\n        \"ServiceFee\": 0,\n        \"FuelCard\": 0,\n        \"FuelCardStorno\": 0,\n        \"HealthCard\": 0,\n        \"HealthCardStorno\": 0,\n        \"CashTotal\": 41616.64,\n        \"ReceiptBrokenCount\": 0,\n        \"ReceiptBroken\": 0,\n        \"ItemStornoCount\": 0,\n        \"ItemStorno\": 0,\n        \"FuelCardReturn\": 0,\n        \"HealthCardReturn\": 0,\n        \"Payments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 33200,\n                \"ExchangeRate\": 1,\n                \"Value\": 33200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"DailyOpenPayments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 10000,\n                \"ExchangeRate\": 1,\n                \"Value\": 10000,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"TrafficPayments\": [\n            {\n                \"Owner\": 2,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 23200,\n                \"ExchangeRate\": 1,\n                \"Value\": 23200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"CashInOutPayments\": []\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "CashReport - Response JSON",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/x-www-form-urlencoded"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "SessionId",
-											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-											"description": "Munkafolyamat egyedi azonosító",
-											"type": "text"
-										},
-										{
-											"key": "DocumentGeneral.Barcode",
-											"value": "auto",
-											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
-											"type": "text"
-										},
-										{
-											"key": "DocumentGeneral.CopyCount",
-											"value": "1",
-											"description": "A nyomtatandó példányszám",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://{{AEE208}}/CashReport",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"CashReport"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "CashReport - Response JSON",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/x-www-form-urlencoded"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "SessionId",
-													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-													"description": "Munkafolyamat egyedi azonosító",
-													"type": "text"
-												},
-												{
-													"key": "DocumentGeneral.Barcode",
-													"value": "auto",
-													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
-													"type": "text"
-												},
-												{
-													"key": "DocumentGeneral.CopyCount",
-													"value": "1",
-													"description": "A nyomtatandó példányszám",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://{{AEE208}}/CashReport",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"CashReport"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "2817"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TCashReport\",\n    \"Result\": {\n        \"Oid\": 39,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CloseDT\": \"2020-02-03T15:46:47\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"0006\",\n        \"DocNumberExt\": \"0006\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"23CDE\",\n        \"Owner\": 0,\n        \"Uid\": 62,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"Traffic\": 23200,\n        \"OtherIncome\": 18416.64,\n        \"TotalIncome\": 41616.64,\n        \"Storno\": 0,\n        \"Return\": 0,\n        \"Empties\": 0,\n        \"OtherExpenses\": 0,\n        \"TotalExpenses\": 0,\n        \"CashTraffic\": 41616.64,\n        \"TotalRound\": 0,\n        \"CashAmount\": 41616.64,\n        \"ServiceFee\": 0,\n        \"FuelCard\": 0,\n        \"FuelCardStorno\": 0,\n        \"HealthCard\": 0,\n        \"HealthCardStorno\": 0,\n        \"CashTotal\": 41616.64,\n        \"ReceiptBrokenCount\": 0,\n        \"ReceiptBroken\": 0,\n        \"ItemStornoCount\": 0,\n        \"ItemStorno\": 0,\n        \"FuelCardReturn\": 0,\n        \"HealthCardReturn\": 0,\n        \"Payments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 33200,\n                \"ExchangeRate\": 1,\n                \"Value\": 33200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"DailyOpenPayments\": [\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 10000,\n                \"ExchangeRate\": 1,\n                \"Value\": 10000,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 2,\n                \"Amount\": 200,\n                \"ExchangeRate\": 1,\n                \"Value\": 200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            },\n            {\n                \"Owner\": 0,\n                \"PaymentMediaIndex\": 1,\n                \"Amount\": 30,\n                \"ExchangeRate\": 273.888,\n                \"Value\": 8216.64,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"TrafficPayments\": [\n            {\n                \"Owner\": 2,\n                \"PaymentMediaIndex\": 0,\n                \"Amount\": 23200,\n                \"ExchangeRate\": 1,\n                \"Value\": 23200,\n                \"Info\": null,\n                \"BeforePlainText\": null,\n                \"AfterPlainText\": null\n            }\n        ],\n        \"CashInOutPayments\": []\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "DailyClose - Response JSON",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/x-www-form-urlencoded"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "SessionId",
-											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-											"description": "Munkafolyamat egyedi azonosító",
-											"type": "text"
-										},
-										{
-											"key": "DocumentGeneral.Barcode",
-											"value": "auto",
-											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
-											"type": "text"
-										},
-										{
-											"key": "DocumentGeneral.CopyCount",
-											"value": "1",
-											"description": "A nyomtatandó példányszám",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://{{AEE208}}/DailyClose",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"DailyClose"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "DailyClose - Response JSON",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/x-www-form-urlencoded"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "SessionId",
-													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-													"description": "Munkafolyamat egyedi azonosító",
-													"type": "text"
-												},
-												{
-													"key": "DocumentGeneral.Barcode",
-													"value": "auto",
-													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
-													"type": "text"
-												},
-												{
-													"key": "DocumentGeneral.CopyCount",
-													"value": "1",
-													"description": "A nyomtatandó példányszám",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://{{AEE208}}/DailyClose",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"DailyClose"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1400"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"TDailyClose\",\n    \"Result\": {\n        \"Oid\": 11,\n        \"Barcode\": \"auto\",\n        \"ClerkCode\": null,\n        \"ClerkName\": null,\n        \"CreateDT\": \"2020-02-06T19:39:26\",\n        \"CloseDT\": \"2020-02-06T19:39:26\",\n        \"CopyCount\": 1,\n        \"DocNumber\": \"0011\",\n        \"DocNumberExt\": \"0011\",\n        \"IsPrintPermanentRows\": true,\n        \"NavCode\": \"0D58A\",\n        \"Owner\": 0,\n        \"Uid\": 120,\n        \"Cut\": true,\n        \"NoPrint\": false,\n        \"Retraction\": 0,\n        \"Traffic\": 5550,\n        \"Surcharge\": 0,\n        \"StornoSellItem\": 0,\n        \"Discount\": 0,\n        \"ReturnSellItem\": 0,\n        \"EmptiesSellItem\": -200,\n        \"ReceiptCount\": 3,\n        \"InvoiceCount\": 3,\n        \"ReceiptAndInvoiceCount\": 6,\n        \"BreakCount\": 1,\n        \"StornoCount\": 3,\n        \"Storno\": -1000,\n        \"ReturnCount\": 5,\n        \"EmptiesCount\": 1,\n        \"Return\": -2100,\n        \"GT\": 73320,\n        \"VatItems\": [\n            {\n                \"C00\": \"400\",\n                \"A20\": \"200\",\n                \"B40\": \"400\",\n                \"C55\": \"550\",\n                \"C60\": \"4000\"\n            }\n        ],\n        \"RootVatItems\": [\n            {\n                \"C\": \"4950\",\n                \"A\": \"200\",\n                \"B\": \"400\"\n            }\n        ],\n        \"NotBusinessDiscount\": 0,\n        \"StornoVatItems\": [\n            {\n                \"C00\": \"-100\"\n            }\n        ],\n        \"ReturnVatItems\": [\n            {\n                \"C00\": \"-200\"\n            }\n        ],\n        \"EmptiesVatItems\": [\n            {\n                \"C00\": \"-100\"\n            }\n        ],\n        \"CashInCount\": 0,\n        \"CashOutCount\": 0,\n        \"PaymentExchangeCount\": 0,\n        \"CashInOutCount\": 0,\n        \"Empties\": -100\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "AeeDataReport - Response JSON",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "http://{{AEE208}}/AeeDataReport",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"AeeDataReport"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "AeeDataReport - Response JSON",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"type": "text",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "http://{{AEE208}}/AeeDataReport",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"AeeDataReport"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "71"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"Status\": \"succes\",\n    \"ResultType\": \"String\",\n    \"Result\": \"success\"\n}"
 								}
 							]
 						}
@@ -18406,6 +18920,120 @@
 					"name": "Documents",
 					"item": [
 						{
+							"name": "AeeDataReport - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "http://{{AEE208}}/AeeDataReport",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"AeeDataReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "AeeDataReport - Response XML",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "http://{{AEE208}}/AeeDataReport",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"AeeDataReport"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "261"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>String</ResultType>\n    <Result xsi:type=\"xsd:string\">success</Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "Break Command - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "A",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "BreakMethod",
+											"value": "2",
+											"description": "Break parancs végrehajtásának módja\n - 0 = Kompatibilis működést biztosít a parancs korábbi változatával\n - 1 = Bizonylat megszakítás \n - 2 = Parancs megszakítás\n - 3 = Slip nyomtatás megszakítása\n - 4 = Bizonylat megszakítás nyomtatás nélkül [Verzió: 3.2.1.17]\n",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/Break",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"Break"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Break Document)- Response XML",
 							"request": {
 								"method": "POST",
@@ -18515,274 +19143,6 @@
 									],
 									"cookie": [],
 									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TReceipt</ResultType>\n    <Result xsi:type=\"TReceipt\">\n        <Oid>17</Oid>\n        <Barcode />\n        <ClerkCode />\n        <ClerkName />\n        <CreateDT>2020-02-06T19:38:13</CreateDT>\n        <CloseDT>2020-02-06T19:38:38</CloseDT>\n        <CopyCount>1</CopyCount>\n        <DocNumber>0011/00006</DocNumber>\n        <DocNumberExt>0011/00006</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>55D18</NavCode>\n        <Owner>0</Owner>\n        <Uid>118</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n        <SellItems xsi:type=\"List&lt;TSellItem&gt;\">\n            <Item>\n                <ItemTypeToNav />\n                <SummaryItemTypeToNav>x</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>0</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>0</ItemType>\n                <Qty>2</Qty>\n                <UnitName>db</UnitName>\n                <Gup>1000</Gup>\n                <Gp>2000</Gp>\n                <VatCode>C60</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>0</PrintIndex>\n            </Item>\n            <Item>\n                <ItemTypeToNav />\n                <SummaryItemTypeToNav>x</SummaryItemTypeToNav>\n                <IsProduct>True</IsProduct>\n                <ItemIndex>1</ItemIndex>\n                <ProductOid>0</ProductOid>\n                <ProductCode />\n                <ProductName>Teszt termék</ProductName>\n                <ItemType>0</ItemType>\n                <Qty>2</Qty>\n                <UnitName>db</UnitName>\n                <Gup>100</Gup>\n                <Gp>200</Gp>\n                <VatCode>C00</VatCode>\n                <ReturnQty>0</ReturnQty>\n                <LinkIndex>0</LinkIndex>\n                <Owner>0</Owner>\n                <PrintProductCode>False</PrintProductCode>\n                <BeforePlainText />\n                <AfterPlainText />\n                <SubTotal>0</SubTotal>\n                <PrintIndex>1</PrintIndex>\n            </Item>\n        </SellItems>\n        <SellId>0/000017</SellId>\n        <OriginalSellItems xsi:type=\"List&lt;TSellItem&gt;\" />\n        <UpdatedSellItems xsi:type=\"List&lt;TSellItem&gt;\" />\n        <SellStatus>Opened</SellStatus>\n        <SellItemTypeCounts xsi:type=\"Dictionary&lt;TSellItemType, Int32&gt;\">\n            <Item>\n                <Key>Sell</Key>\n                <Value>2</Value>\n            </Item>\n        </SellItemTypeCounts>\n        <SellItemTypes xsi:type=\"Dictionary&lt;TSellItemType, Double&gt;\">\n            <Item>\n                <Key>Sell</Key>\n                <Value>2200</Value>\n            </Item>\n        </SellItemTypes>\n        <VatItems xsi:type=\"Dictionary&lt;String, Double&gt;\">\n            <Item>\n                <Key>C60</Key>\n                <Value>2000</Value>\n            </Item>\n            <Item>\n                <Key>C00</Key>\n                <Value>200</Value>\n            </Item>\n        </VatItems>\n        <RootVatItems xsi:type=\"Dictionary&lt;Char, Double&gt;\">\n            <Item>\n                <Key>C</Key>\n                <Value>2200</Value>\n            </Item>\n        </RootVatItems>\n        <LazyId>1</LazyId>\n        <Change>0</Change>\n        <RoundValue>0</RoundValue>\n        <GTotal>2200</GTotal>\n        <Payments xsi:type=\"List&lt;TPayment&gt;\" />\n        <ReceiptType>0</ReceiptType>\n    </Result>\n</TResponse>"
-								}
-							]
-						},
-						{
-							"name": "Break Command - Response XML",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/x-www-form-urlencoded"
-									},
-									{
-										"key": "A",
-										"type": "text",
-										"value": "application/xml"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "SessionId",
-											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-											"description": "Munkafolyamat egyedi azonosító",
-											"type": "text"
-										},
-										{
-											"key": "BreakMethod",
-											"value": "2",
-											"description": "Break parancs végrehajtásának módja\n - 0 = Kompatibilis működést biztosít a parancs korábbi változatával\n - 1 = Bizonylat megszakítás \n - 2 = Parancs megszakítás\n - 3 = Slip nyomtatás megszakítása\n - 4 = Bizonylat megszakítás nyomtatás nélkül [Verzió: 3.2.1.17]\n",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://{{AEE208}}/Break",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"Break"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "DailyOpen - Response XML",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/x-www-form-urlencoded",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/xml",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "SessionId",
-											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-											"description": "Munkafolyamat egyedi azonosító",
-											"type": "text"
-										},
-										{
-											"key": "Payments[0].Amount",
-											"value": "10000",
-											"description": "0. fizetéshez tartozó összeg",
-											"type": "text"
-										},
-										{
-											"key": "Payments[0].PaymentMediaIndex",
-											"value": "0",
-											"description": "0. fizetéshez tartozó fizető eszköz indexe",
-											"type": "text"
-										},
-										{
-											"key": "Payments[2].Amount",
-											"value": "200",
-											"description": "Opcionális\n - 1. fizetéshez tartozó összeg",
-											"type": "text"
-										},
-										{
-											"key": "Payments[2].PaymentMediaIndex",
-											"value": "2",
-											"description": "Opcionális\n - 1. fizetéshez tartozó fizető eszköz indexe",
-											"type": "text"
-										},
-										{
-											"key": "Payments[5].Amount",
-											"value": "30",
-											"description": "Opcionális\n - 2. fizetéshez tartozó összeg (opcionális)",
-											"type": "text"
-										},
-										{
-											"key": "Payments[5].PaymentMediaIndex",
-											"value": "1",
-											"description": "Opcionális\n - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
-											"type": "text"
-										},
-										{
-											"key": "ClerkName",
-											"value": "Teszt Pánztáros",
-											"description": "A pénztáros neve (opcionális)",
-											"type": "text"
-										},
-										{
-											"key": "ClerckCode",
-											"value": "001",
-											"description": "A pénztáros kódja (opcionális)",
-											"type": "text"
-										},
-										{
-											"key": "DocumentGeneral.Barcode",
-											"value": "auto",
-											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
-											"type": "text"
-										},
-										{
-											"key": "DocumentGeneral.CopyCount",
-											"value": "1",
-											"description": "A nyomtatandó példányszám",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://{{AEE208}}/DailyOpen",
-									"protocol": "http",
-									"host": [
-										"{{AEE208}}"
-									],
-									"path": [
-										"DailyOpen"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "DailyOpen - Response XML",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"value": "application/x-www-form-urlencoded",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/xml",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "SessionId",
-													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
-													"description": "Munkafolyamat egyedi azonosító",
-													"type": "text"
-												},
-												{
-													"key": "Payments[0].Amount",
-													"value": "10000",
-													"description": "0. fizetéshez tartozó összeg",
-													"type": "text"
-												},
-												{
-													"key": "Payments[0].PaymentMediaIndex",
-													"value": "0",
-													"description": "0. fizetéshez tartozó fizető eszköz indexe",
-													"type": "text"
-												},
-												{
-													"key": "Payments[2].Amount",
-													"value": "200",
-													"description": "Opcionális\n - 1. fizetéshez tartozó összeg",
-													"type": "text"
-												},
-												{
-													"key": "Payments[2].PaymentMediaIndex",
-													"value": "2",
-													"description": "Opcionális\n - 1. fizetéshez tartozó fizető eszköz indexe",
-													"type": "text"
-												},
-												{
-													"key": "Payments[5].Amount",
-													"value": "30",
-													"description": "Opcionális\n - 2. fizetéshez tartozó összeg (opcionális)",
-													"type": "text"
-												},
-												{
-													"key": "Payments[5].PaymentMediaIndex",
-													"value": "1",
-													"description": "Opcionális\n - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
-													"type": "text"
-												},
-												{
-													"key": "ClerkName",
-													"value": "Teszt Pánztáros",
-													"description": "A pénztáros neve (opcionális)",
-													"type": "text"
-												},
-												{
-													"key": "ClerckCode",
-													"value": "001",
-													"description": "A pénztáros kódja (opcionális)",
-													"type": "text"
-												},
-												{
-													"key": "DocumentGeneral.Barcode",
-													"value": "auto",
-													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
-													"type": "text"
-												},
-												{
-													"key": "DocumentGeneral.CopyCount",
-													"value": "1",
-													"description": "A nyomtatandó példányszám",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://{{AEE208}}/DailyOpen",
-											"protocol": "http",
-											"host": [
-												"{{AEE208}}"
-											],
-											"path": [
-												"DailyOpen"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "xml",
-									"header": [
-										{
-											"key": "Accep-Charset",
-											"value": "utf-8"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/xml"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1757"
-										}
-									],
-									"cookie": [],
-									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TDailyOpen</ResultType>\n    <Result xsi:type=\"TDailyOpen\">\n        <Oid>7</Oid>\n        <Barcode>auto</Barcode>\n        <ClerkCode></ClerkCode>\n        <ClerkName></ClerkName>\n        <CloseDT>2020-02-03T15:53:03</CloseDT>\n        <CopyCount>1</CopyCount>\n        <DocNumber>0007</DocNumber>\n        <DocNumberExt>0007</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>8B03E</NavCode>\n        <Owner>0</Owner>\n        <Uid>64</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n        <Payments xsi:type=\"List&lt;TPayment&gt;\">\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>0</PaymentMediaIndex>\n                <Amount>10000</Amount>\n                <ExchangeRate>1</ExchangeRate>\n                <Value>10000</Value>\n                <Info></Info>\n                <BeforePlainText></BeforePlainText>\n                <AfterPlainText></AfterPlainText>\n            </Item>\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>2</PaymentMediaIndex>\n                <Amount>200</Amount>\n                <ExchangeRate>1</ExchangeRate>\n                <Value>200</Value>\n                <Info></Info>\n                <BeforePlainText></BeforePlainText>\n                <AfterPlainText></AfterPlainText>\n            </Item>\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>1</PaymentMediaIndex>\n                <Amount>30</Amount>\n                <ExchangeRate>273,888</ExchangeRate>\n                <Value>8216,64</Value>\n                <Info></Info>\n                <BeforePlainText></BeforePlainText>\n                <AfterPlainText></AfterPlainText>\n            </Item>\n        </Payments>\n    </Result>\n</TResponse>"
 								}
 							]
 						},
@@ -19037,47 +19397,201 @@
 							]
 						},
 						{
-							"name": "AeeDataReport - Response XML",
+							"name": "DailyOpen - Response XML",
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
 										"key": "Accept",
-										"type": "text",
-										"value": "application/xml"
+										"value": "application/xml",
+										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Amount",
+											"value": "10000",
+											"description": "0. fizetéshez tartozó összeg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"description": "0. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text"
+										},
+										{
+											"key": "Payments[2].Amount",
+											"value": "200",
+											"description": "Opcionális\n - 1. fizetéshez tartozó összeg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[2].PaymentMediaIndex",
+											"value": "2",
+											"description": "Opcionális\n - 1. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text"
+										},
+										{
+											"key": "Payments[5].Amount",
+											"value": "30",
+											"description": "Opcionális\n - 2. fizetéshez tartozó összeg (opcionális)",
+											"type": "text"
+										},
+										{
+											"key": "Payments[5].PaymentMediaIndex",
+											"value": "1",
+											"description": "Opcionális\n - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+											"type": "text"
+										},
+										{
+											"key": "ClerkName",
+											"value": "Teszt Pánztáros",
+											"description": "A pénztáros neve (opcionális)",
+											"type": "text"
+										},
+										{
+											"key": "ClerckCode",
+											"value": "001",
+											"description": "A pénztáros kódja (opcionális)",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "http://{{AEE208}}/AeeDataReport",
+									"raw": "http://{{AEE208}}/DailyOpen",
 									"protocol": "http",
 									"host": [
 										"{{AEE208}}"
 									],
 									"path": [
-										"AeeDataReport"
+										"DailyOpen"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "AeeDataReport - Response XML",
+									"name": "DailyOpen - Response XML",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [
 											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											},
+											{
 												"key": "Accept",
-												"type": "text",
-												"value": "application/xml"
+												"value": "application/xml",
+												"type": "text"
 											}
 										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Amount",
+													"value": "10000",
+													"description": "0. fizetéshez tartozó összeg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"description": "0. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text"
+												},
+												{
+													"key": "Payments[2].Amount",
+													"value": "200",
+													"description": "Opcionális\n - 1. fizetéshez tartozó összeg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[2].PaymentMediaIndex",
+													"value": "2",
+													"description": "Opcionális\n - 1. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text"
+												},
+												{
+													"key": "Payments[5].Amount",
+													"value": "30",
+													"description": "Opcionális\n - 2. fizetéshez tartozó összeg (opcionális)",
+													"type": "text"
+												},
+												{
+													"key": "Payments[5].PaymentMediaIndex",
+													"value": "1",
+													"description": "Opcionális\n - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+													"type": "text"
+												},
+												{
+													"key": "ClerkName",
+													"value": "Teszt Pánztáros",
+													"description": "A pénztáros neve (opcionális)",
+													"type": "text"
+												},
+												{
+													"key": "ClerckCode",
+													"value": "001",
+													"description": "A pénztáros kódja (opcionális)",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
 										"url": {
-											"raw": "http://{{AEE208}}/AeeDataReport",
+											"raw": "http://{{AEE208}}/DailyOpen",
 											"protocol": "http",
 											"host": [
 												"{{AEE208}}"
 											],
 											"path": [
-												"AeeDataReport"
+												"DailyOpen"
 											]
 										}
 									},
@@ -19095,11 +19609,525 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "261"
+											"value": "1757"
 										}
 									],
 									"cookie": [],
-									"body": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>String</ResultType>\n    <Result xsi:type=\"xsd:string\">success</Result>\n</TResponse>"
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TDailyOpen</ResultType>\n    <Result xsi:type=\"TDailyOpen\">\n        <Oid>7</Oid>\n        <Barcode>auto</Barcode>\n        <ClerkCode></ClerkCode>\n        <ClerkName></ClerkName>\n        <CloseDT>2020-02-03T15:53:03</CloseDT>\n        <CopyCount>1</CopyCount>\n        <DocNumber>0007</DocNumber>\n        <DocNumberExt>0007</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>8B03E</NavCode>\n        <Owner>0</Owner>\n        <Uid>64</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n        <Payments xsi:type=\"List&lt;TPayment&gt;\">\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>0</PaymentMediaIndex>\n                <Amount>10000</Amount>\n                <ExchangeRate>1</ExchangeRate>\n                <Value>10000</Value>\n                <Info></Info>\n                <BeforePlainText></BeforePlainText>\n                <AfterPlainText></AfterPlainText>\n            </Item>\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>2</PaymentMediaIndex>\n                <Amount>200</Amount>\n                <ExchangeRate>1</ExchangeRate>\n                <Value>200</Value>\n                <Info></Info>\n                <BeforePlainText></BeforePlainText>\n                <AfterPlainText></AfterPlainText>\n            </Item>\n            <Item>\n                <Owner>0</Owner>\n                <PaymentMediaIndex>1</PaymentMediaIndex>\n                <Amount>30</Amount>\n                <ExchangeRate>273,888</ExchangeRate>\n                <Value>8216,64</Value>\n                <Info></Info>\n                <BeforePlainText></BeforePlainText>\n                <AfterPlainText></AfterPlainText>\n            </Item>\n        </Payments>\n    </Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "CashIn - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "CashInType",
+											"value": "0",
+											"description": "TCashInType lehetséges értékei:\n- StartingCash\t= 0x00\t// „01 - váltópénz bevitel”\n- CashierDeposit\t= 0x01\t// „02 - pénztáros pénzfelvétel”\n- Tolling\t\t\t= 0x02\t// „03 - díjbeszedés”\n- ScratchSale\t\t= 0x03\t// „04 - sorsjegy eladás”\n- Advance\t\t= 0x04\t// „05 - előleg”\n- CashShortage\t= 0x05\t// „06 - pénztárhiány”\n- Qratuity\t\t= 0x06\t// „07 - borravaló”\n- OtherPayments\t= 0x07\t// „08 - egyéb befizetés”\n",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Amount",
+											"value": "100000",
+											"description": "0. fizetéshez tartozó összeg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Info",
+											"value": "Váltópénz",
+											"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"description": "0. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text"
+										},
+										{
+											"key": "Payments[2].Amount",
+											"value": "200",
+											"description": "Opcionális - 1. fizetéshez tartozó összeg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].PaymentMediaIndex",
+											"value": "2",
+											"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].Info",
+											"value": "Váltópénz",
+											"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Amount",
+											"value": "30",
+											"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].PaymentMediaIndex",
+											"value": "1",
+											"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Info",
+											"value": "Váltópénz",
+											"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/CashIn",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"CashIn"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashIn - Response XML",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "CashInType",
+													"value": "0",
+													"description": "TCashInType lehetséges értékei:\n- StartingCash\t= 0x00\t// „01 - váltópénz bevitel”\n- CashierDeposit\t= 0x01\t// „02 - pénztáros pénzfelvétel”\n- Tolling\t\t\t= 0x02\t// „03 - díjbeszedés”\n- ScratchSale\t\t= 0x03\t// „04 - sorsjegy eladás”\n- Advance\t\t= 0x04\t// „05 - előleg”\n- CashShortage\t= 0x05\t// „06 - pénztárhiány”\n- Qratuity\t\t= 0x06\t// „07 - borravaló”\n- OtherPayments\t= 0x07\t// „08 - egyéb befizetés”\n",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Amount",
+													"value": "100000",
+													"description": "0. fizetéshez tartozó összeg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Info",
+													"value": "Váltópénz",
+													"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"description": "0. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text"
+												},
+												{
+													"key": "Payments[2].Amount",
+													"value": "200",
+													"description": "Opcionális - 1. fizetéshez tartozó összeg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].PaymentMediaIndex",
+													"value": "2",
+													"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].Info",
+													"value": "Váltópénz",
+													"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Amount",
+													"value": "30",
+													"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].PaymentMediaIndex",
+													"value": "1",
+													"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Info",
+													"value": "Váltópénz",
+													"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashIn",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashIn"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "788"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TCashIn</ResultType>\n    <Result xsi:type=\"TCashIn\">\n        <Oid>2</Oid>\n        <Barcode>auto</Barcode>\n        <ClerkCode />\n        <ClerkName />\n        <CreateDT>2020-04-30T11:32:09</CreateDT>\n        <CloseDT>2020-04-30T11:32:09</CloseDT>\n        <CopyCount>1</CopyCount>\n        <DocNumber>M/2186/00002</DocNumber>\n        <DocNumberExt>M/Y00300005/2186/00002</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>A6D0E</NavCode>\n        <Owner>2</Owner>\n        <Uid>2058154</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n    </Result>\n</TResponse>"
+								}
+							]
+						},
+						{
+							"name": "CashOut - Response XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "SessionId",
+											"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+											"description": "Munkafolyamat egyedi azonosító",
+											"type": "text"
+										},
+										{
+											"key": "CashOutType",
+											"value": "0",
+											"description": "TCashOutType lehetséges értékei\n- Skim\t\t\t\t\t= 0x00\t// „31 - fölözés”\n- CashierWithdrawal\t\t= 0x01\t// „32 - pénztáros levétel”\n- VoucherWithdrawal\t\t= 0x02\t// „33 - utalvány kivét”\n- GiftCardWithdrawal\t\t= 0x03\t// „34 - Ajándékkártya kivét”\n- SalaryPayment\t\t\t= 0x04\t// „35 - bérkifizetés”\n- SalaryAdvance\t\t\t= 0x05\t// „36 - munkabér előleg”\n- PostalFee\t\t\t\t= 0x06\t// „37 - postaköltség”\n- OtherOverheadCost\t\t= 0x07\t// „38 - egyéb rezsi”\n- BuyGoods\t\t\t\t= 0x08\t// „39 - áruvásárlás”\n- FinalAmountWithdrawal\t= 0x09\t// „40 – záró összeg levétel”\n- OtherWithdrawal\t\t= 0x0A\t// „41 - egyéb kifizetés”",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Amount",
+											"value": "-1000",
+											"description": "0. fizetéshez tartozó összeg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].Info",
+											"value": "Fölözés",
+											"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text"
+										},
+										{
+											"key": "Payments[0].PaymentMediaIndex",
+											"value": "0",
+											"description": "0. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text"
+										},
+										{
+											"key": "Payments[2].Amount",
+											"value": "200",
+											"description": "Opcionális - 1. fizetéshez tartozó összeg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].PaymentMediaIndex",
+											"value": "2",
+											"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[2].Info",
+											"value": "Fölözés",
+											"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Amount",
+											"value": "30",
+											"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].PaymentMediaIndex",
+											"value": "1",
+											"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Payments[5].Info",
+											"value": "Fölözés",
+											"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "DocumentGeneral.Barcode",
+											"value": "auto",
+											"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+											"type": "text"
+										},
+										{
+											"key": "DocumentGeneral.CopyCount",
+											"value": "1",
+											"description": "A nyomtatandó példányszám",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{AEE208}}/CashOut",
+									"protocol": "http",
+									"host": [
+										"{{AEE208}}"
+									],
+									"path": [
+										"CashOut"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CashOut - Response XML",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/xml"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "SessionId",
+													"value": "d73296e8-83fb-48c8-9ff0-755d3bf54c03",
+													"description": "Munkafolyamat egyedi azonosító",
+													"type": "text"
+												},
+												{
+													"key": "CashOutType",
+													"value": "0",
+													"description": "TCashOutType lehetséges értékei\n- Skim\t\t\t\t\t= 0x00\t// „31 - fölözés”\n- CashierWithdrawal\t\t= 0x01\t// „32 - pénztáros levétel”\n- VoucherWithdrawal\t\t= 0x02\t// „33 - utalvány kivét”\n- GiftCardWithdrawal\t\t= 0x03\t// „34 - Ajándékkártya kivét”\n- SalaryPayment\t\t\t= 0x04\t// „35 - bérkifizetés”\n- SalaryAdvance\t\t\t= 0x05\t// „36 - munkabér előleg”\n- PostalFee\t\t\t\t= 0x06\t// „37 - postaköltség”\n- OtherOverheadCost\t\t= 0x07\t// „38 - egyéb rezsi”\n- BuyGoods\t\t\t\t= 0x08\t// „39 - áruvásárlás”\n- FinalAmountWithdrawal\t= 0x09\t// „40 – záró összeg levétel”\n- OtherWithdrawal\t\t= 0x0A\t// „41 - egyéb kifizetés”",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Amount",
+													"value": "-1000",
+													"description": "0. fizetéshez tartozó összeg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].Info",
+													"value": "Fölözés",
+													"description": "Mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text"
+												},
+												{
+													"key": "Payments[0].PaymentMediaIndex",
+													"value": "0",
+													"description": "0. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text"
+												},
+												{
+													"key": "Payments[2].Amount",
+													"value": "200",
+													"description": "Opcionális - 1. fizetéshez tartozó összeg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].PaymentMediaIndex",
+													"value": "2",
+													"description": "Opcionális - 1. fizetéshez tartozó fizető eszköz indexe",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[2].Info",
+													"value": "Fölözés",
+													"description": "Opcionális - 1. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Amount",
+													"value": "30",
+													"description": "Opcionális - 2. fizetéshez tartozó összeg (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].PaymentMediaIndex",
+													"value": "1",
+													"description": "Opcionális - 2. fizetéshez tartozó fizető eszköz indexe (opcionális)",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "Payments[5].Info",
+													"value": "Fölözés",
+													"description": "Opcionális - 2. fizetéshez tartozó mire történt a befizetés = \"CahsInType\"-nak megfelelő szöveg",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "DocumentGeneral.Barcode",
+													"value": "auto",
+													"description": "Opcionális, lehetséges értékek:\n - vonalkód = a megadott vonalkód nyomtatásra kerül\n - \"auto\" = esetén a pénztárgép generál egy vissza kérdezhető kódot",
+													"type": "text"
+												},
+												{
+													"key": "DocumentGeneral.CopyCount",
+													"value": "1",
+													"description": "A nyomtatandó példányszám",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://{{AEE208}}/CashOut",
+											"protocol": "http",
+											"host": [
+												"{{AEE208}}"
+											],
+											"path": [
+												"CashOut"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Accep-Charset",
+											"value": "utf-8"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "790"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TResponse xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n    <Status>succes</Status>\n    <ResultType>TCashOut</ResultType>\n    <Result xsi:type=\"TCashOut\">\n        <Oid>2</Oid>\n        <Barcode>auto</Barcode>\n        <ClerkCode />\n        <ClerkName />\n        <CreateDT>2020-04-30T11:37:14</CreateDT>\n        <CloseDT>2020-04-30T11:37:14</CloseDT>\n        <CopyCount>1</CopyCount>\n        <DocNumber>M/2186/00004</DocNumber>\n        <DocNumberExt>M/Y00300005/2186/00004</DocNumberExt>\n        <IsPrintPermanentRows>True</IsPrintPermanentRows>\n        <NavCode>D4107</NavCode>\n        <Owner>2</Owner>\n        <Uid>2058156</Uid>\n        <Cut>True</Cut>\n        <NoPrint>False</NoPrint>\n        <Retraction>0</Retraction>\n    </Result>\n</TResponse>"
 								}
 							]
 						}
@@ -19167,7 +20195,7 @@
 	],
 	"variable": [
 		{
-			"id": "3cb736a6-a9c4-4428-9fa5-7a26488caa95",
+			"id": "9bf91b67-c024-4497-9020-5a1d14e87126",
 			"key": "AEE208",
 			"value": "192.168.1.45:8080",
 			"type": "string"
