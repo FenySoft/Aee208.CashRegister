@@ -5,22 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <script src="aee.js" async="async" defer="defer"></script>
-  <title>Nap zárás</title>
+  <title>CP KASSZA 2020 - SZERVÍZ MÓD</title>
 </head>
 <body>
-  <form method="post" action="DailyClose" enctype="multipart/form-data">
     <h1>
-      Nap zárás
+      CP KASSZA 2020 - SZERVÍZ MÓD
     </h1>
+  
+   <form method="get" action="Shutdown.xhtml" enctype="application/x-www-form-urlencoded">
     <div>
-      <button>Nap zárás</button>
+      <button class="button" type="submit" >Shutdown</button>
     </div>
-    <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
-    <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
-    <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
   </form>
+
+
   <div>
     <button onclick="Cancel()">Mégsem</button>
   </div>
-</body>
+  </body>
 </html>

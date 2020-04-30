@@ -5,19 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <script src="aee.js" async="async" defer="defer"></script>
-  <title>Nap zárás</title>
+  <title>Bejelentkezés</title>
 </head>
 <body>
-  <form method="post" action="DailyClose" enctype="multipart/form-data">
+  <form method="post" action="Login" enctype="multipart/form-data">
     <h1>
-      Nap zárás
+      Bejelentkezés
     </h1>
     <div>
-      <button>Nap zárás</button>
+      <input placeholder="Felhasználó: " type="text" name="name"/>
+      <input placeholder="Jelszó : " type="text" name="password"/>
+    </div>
+    <div>
+      <button>Bejelentkezés</button>
     </div>
     <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
-    <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
-    <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
   </form>
   <div>
     <button onclick="Cancel()">Mégsem</button>

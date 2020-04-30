@@ -5,15 +5,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <script src="aee.js" async="async" defer="defer"></script>
-  <title>Nap zárás</title>
+  <title>Pénz ki</title>
 </head>
 <body>
-  <form method="post" action="DailyClose" enctype="multipart/form-data">
+  <form method="post" action="Login" enctype="multipart/form-data">
     <h1>
-      Nap zárás
+      Pénz ki
     </h1>
     <div>
-      <button>Nap zárás</button>
+      <select name="Payments[RowIndex].PaymentMediaIndex" default = "0">
+        <option value="0"> Készpénz Ft</option>
+        <option value="1"> Készpénz €</option>
+      </select>
+    </div>
+	<input placeholder="Összeg : " type="text" name="cashout_amount"/>
+    <div>
+      <select name="Payments[RowIndex].PaymentMediaIndex" default = "0">
+        <option value="0"> Nyersanyag vásárlás</option>
+        <option value="1"> ?</option>
+      </select>
+    </div>
+	<div>
+      <button>Pénz ki</button>
     </div>
     <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
     <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>

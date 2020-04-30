@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+.header {
+	background-color: gray;
+	color: #ffffff;
+	width:100%;
+}
+.header h1 {
+	font-size:18px;
+	text-align: center;
+	display: inline-block;
+}
+.exit_button{
+  background-color: #DCDCDC;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 1px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+}
+.button{
+  background-color: #f0d541;
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 1px 1px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 10%;  
+}
+button:hover {
+  background-color: gray;
+}
+.li{
+  background-color: #f57171; 
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 1px 1px;
+  border-radius: 15px;
+  width: 25%;  
+  display: inline-block;
+}
+.footer {
+  background-color: #0dbf37;
+  text-align: center;
+  font-size: 30px;
+  padding: 3px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+.footer_button {
+  background-color: #0dbf37;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+footer_button:hover {
+  background-color: green;
+}
+</style>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="aee.js" async="async" defer="defer"></script>
+<meta charset="UTF-8" />
+</head>
+	
+<body>
+<div class="header">
+	<button class="exit_button" type="button" onclick="Cancel()">X</button>
+	<h1>ÁFA váltás</h1>
+</div>
+
+<p></p>
+	<button class="button" onclick="javascript_helye()">A:</button>
+	<ul class = "li">27%</ul><br/>
+	<button class="button" onclick="javascript_helye()">B:</button>
+	<ul class = "li">18%</ul><br/>
+	<button class="button" onclick="javascript_helye()">C:</button>
+	<ul class = "li">5%</ul><br/>
+	<button class="button" onclick="javascript_helye()">D:</button>
+	<ul class = "li">ANK%</ul><br/>
+	<button class="button" onclick="javascript_helye()">E:</button>
+	<ul class = "li">TAM%</ul><br/>
+
+</body>
+
+<footer>
+<div class="footer">
+<form method="post" action="SetVatUpdate" enctype="multipart/form-data">
+	<button class="footer_button">OK</button>
+    <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
+</form>
+</div>
+</footer>
+
+</html>

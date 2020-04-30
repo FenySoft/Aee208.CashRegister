@@ -4,9 +4,25 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Service Login</title>
+  <script src="aee.js" async="async" defer="defer"></script>
+  <title>Bejelentkezés</title>
 </head>
 <body>
-
+  <form method="post" action="Login" enctype="multipart/form-data">
+    <h1>
+      Bejelentkezés
+    </h1>
+    <div>
+      <li>PIN: <input type="password" name="PIN"/></li>
+	  <li>Műszerész tanúsítvány betöltése: <input type="file" accept=".cer" name="UserCertificate" /></li>
+    </div>
+    <div>
+      <button>Bejelentkezés</button>
+    </div>
+    <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
+  </form>
+  <div>
+    <button onclick="Cancel()">Mégsem</button>
+  </div>
 </body>
 </html>
