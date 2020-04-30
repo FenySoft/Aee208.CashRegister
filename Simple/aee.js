@@ -5,12 +5,12 @@ function Cancel()
 
 function SessionIdGet()
 {
-  return localStorage.SessionId;
+  return sessionStorage.SessionId;
 }
 
 function SessionIdSet(ASessionId)
 {
-  localStorage.SessionId = ASessionId;
+  sessionStorage.SessionId = ASessionId;
 }
 
 function DailyOpen(ACash)
