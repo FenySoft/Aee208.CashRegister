@@ -3,6 +3,11 @@ function Back()
   window.history.back();
 }
 
+function Back2()
+{
+  window.history.go(-2);
+}
+
 function SessionIdGet()
 {
   return sessionStorage.SessionId;
