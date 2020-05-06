@@ -4,11 +4,11 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <script src="aee.js" async="async" defer="defer"></script>
+  <script src="/aee.js" async="async" defer="defer"></script>
   <title>Bejelentkezés</title>
 </head>
 <body>
-  <form method="post" action="Login" enctype="multipart/form-data">
+  <form method="post" action="ServiceMode" enctype="multipart/form-data">
     <h1>
       Bejelentkezés
     </h1>
@@ -22,7 +22,7 @@
     <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
   </form>
   <div>
-    <button onclick="Cancel()">Mégsem</button>
+    <button onclick="Back()">Mégsem</button>
   </div>
 </body>
 </html>
