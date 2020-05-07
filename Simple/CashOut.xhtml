@@ -3,37 +3,34 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <script src="/aee.js" async="async" defer="defer"></script>
-  <title>Pénz ki</title>
-</head>
-<body>
-  <form method="post" action="Login" enctype="multipart/form-data">
-    <h1>
-      Pénz ki
-    </h1>
-    <div>
-      <select name="Payments[RowIndex].PaymentMediaIndex" default = "0">
-        <option value="0"> Készpénz Ft</option>
-        <option value="1"> Készpénz €</option>
-      </select>
-    </div>
-	<input placeholder="Összeg : " type="text" name="cashout_amount"/>
-    <div>
-      <select name="Payments[RowIndex].PaymentMediaIndex" default = "0">
-        <option value="0"> Nyersanyag vásárlás</option>
-        <option value="1"> ?</option>
-      </select>
-    </div>
-	<div>
-      <button>Pénz ki</button>
-    </div>
-    <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
-    <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
-    <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
-  </form>
-  <div>
-    <button onclick="Back()">Mégsem</button>
-  </div>
-</body>
+  <head>
+    <script src="/aee.js"></script>
+    <title>Pénz ki</title>
+  </head>
+  <body>
+    <h1>Pénz ki</h1>
+    <form method="post" action="CashOut" enctype="multipart/form-data">
+      <div>
+        <select name="Payments[RowIndex].PaymentMediaIndex" default="0">
+          <option value="0"> Készpénz Ft</option>
+          <option value="1"> Készpénz €</option>
+        </select>
+      </div>
+      <input placeholder="Összeg" type="text" name="cashout_amount"/>
+      <div>
+        <select name="Payments[RowIndex].PaymentMediaIndex" default="0">
+          <option value="0"> Nyersanyag vásárlás</option>
+          <option value="1"> ?</option>
+        </select>
+      </div>
+      <div>
+        <button>Pénz ki</button>
+      </div>
+      <input type="hidden" name="SessionId"/>
+      <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
+      <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
+    </form>
+    <div><button onclick="Back()">Mégsem</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
 </html>

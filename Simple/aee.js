@@ -10,12 +10,44 @@ function Back2()
 
 function SessionIdGet()
 {
-  return sessionStorage.SessionId;
+  return IdGet("SessionId");
 }
 
-function SessionIdSet(ASessionId)
+function SessionIdSet(AValue)
 {
-  sessionStorage.SessionId = ASessionId;
+  IdSet("SessionId", AValue);
+}
+
+function IdGet(AIdName)
+{
+  return sessionStorage.getItem(AIdName);
+}
+
+function IdSet(AIdName, AIdValue)
+{
+  sessionStorage.setItem(AIdName, AIdValue);
+}
+
+function IdToForm(AIdName)
+{
+  var x = document.getElementsByName(AIdName);
+  var i;
+
+  for (i = 0; i < x.length; i++)
+  {
+    if (x[i].type == "hidden")
+      x[i].value = IdGet(AIdName);
+  }
+}
+
+function SessionIdToForm()
+{
+  IdToForm("SessionId");
+}
+
+function LazyIdToForm()
+{
+  IdToForm("LazyId");
 }
 
 function DailyOpen(ACash)

@@ -3,26 +3,21 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <script src="/aee.js" async="async" defer="defer"></script>
-  <title>Bejelentkezés</title>
-</head>
-<body>
-  <form method="post" action="Admin.Login" enctype="multipart/form-data">
-    <h1>
-      Bejelentkezés
-    </h1>
-    <div>
-      <input placeholder="Felhasználó: " type="text" name="Name"/>
-      <input placeholder="Jelszó : " type="text" name="Password"/>
-    </div>
-    <div>
-      <button>Bejelentkezés</button>
-    </div>
-    <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
-  </form>
-  <div>
-    <button onclick="Back()">Mégsem</button>
-  </div>
-</body>
+  <head>
+    <script src="/aee.js"></script>
+    <title>Bejelentkezés</title>
+  </head>
+  <body>
+    <h1>Bejelentkezés</h1>
+    <form method="post" action="Admin.Login" enctype="multipart/form-data">
+      <div>
+        <input placeholder="Felhasználó: " type="text" name="Name"/>
+        <input placeholder="Jelszó : " type="text" name="Password"/>
+      </div>
+      <div><button>Bejelentkezés</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Mégsem</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
 </html>

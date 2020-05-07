@@ -3,31 +3,43 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <script src="/aee.js" async="async" defer="defer"></script>
-  <title>Pénz be</title>
-</head>
-<body>
-  <form method="post" action="Login" enctype="multipart/form-data">
-    <h1>
-      Pénz be
-    </h1>
+  <head>
+    <script src="/aee.js"></script>
+    <title>Pénz be</title>
+  </head>
+  <body>
+    <h1>Pénz be</h1>
+    <form method="post" action="CashIn" enctype="multipart/form-data">
+      <div><input placeholder="Összeg" type="text" name="Payments[0].Amount"/></div>
+      <div>
+        <select name="Payments[0].PaymentMediaIndex" default="0">
+          <option value="0"> Készpénz Ft</option>
+          <option value="1"> Készpénz €</option>
+        </select>
+      </div>
+      <div><input placeholder="Beizetés oka" type="text" name="Payments[0].Info"/></div>
+      <div>
+        <select name="CashInType" default="0">
+          <option value="0">váltópénz bevitel</option>
+          <option value="1">pénztáros pénzfelvétel</option>
+          <option value="2">díjbeszedés</option>
+          <option value="4">sorsjegy eladás</option>
+          <option value="3">előleg</option>
+          <option value="5">pénztárhiány”</option>
+          <option value="6">borravaló”</option>
+          <option value="7">egyéb befizetés</option>
+        </select>
+      </div>
+      <div>
+        <button>Pénz be</button>
+      </div>
+      <input type="hidden" name="SessionId"/>
+      <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
+      <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
+    </form>
     <div>
-      <select name="Payments[RowIndex].PaymentMediaIndex" default = "0">
-        <option value="0"> Készpénz Ft</option>
-        <option value="1"> Készpénz €</option>
-      </select>
+      <button onclick="Back()">Mégsem</button>
     </div>
-	<input placeholder="Összeg : " type="text" name="cashin_amount"/>
-    <div>
-      <button>Pénz be</button>
-    </div>
-    <input type="hidden" name="SessionId" value="{SessionIdGet()}"/>
-    <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
-    <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
-  </form>
-  <div>
-    <button onclick="Back()">Mégsem</button>
-  </div>
-</body>
+    <script>SessionIdToForm();</script>
+  </body>
 </html>

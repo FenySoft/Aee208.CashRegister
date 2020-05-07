@@ -3,16 +3,13 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <script src="/aee.js" async="async" defer="defer">
-    SessionIdSet({SessionId})
-  </script>
-  <title>Sikeres végrehajtás</title>
-</head>
-<body>
-  <h1>Bejelentkezés sikeres</h1>
-  <div>
-    <button onclick="Back2()">Ok</button>
-  </div>
-</body>
+  <head>
+    <script src="/aee.js"></script>
+    <title>Sikeres végrehajtás</title>
+  </head>
+  <body>
+    <h1>Bejelentkezés sikeres</h1>
+    <div><button onclick="Back2()">Ok</button></div>
+    <script>SessionIdSet("{SessionId}");</script>
+  </body>
 </html>
