@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>Bejelentkezés</h1>
-    <form method="post" action="Admin.ClerkAdd" enctype="multipart/form-data">
+    <form method="post" action="UserAdd" enctype="multipart/form-data">
       <div>
         <input placeholder="Pénnztáros neve: " type="text" name="ClerkName"/>
         <input placeholder="Pénztáros kód: " type="text" name="ClerkCode"/>
@@ -19,7 +19,7 @@
       <div><button>Bejelentkezés</button></div>
       <input type="hidden" name="SessionId"/>
     </form>
-    <div><button onclick="Back()">Mégsem</button></div>
+    <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>
   </body>
 </html>

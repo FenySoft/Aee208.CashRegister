@@ -5,15 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <script src="/aee.js"></script>
-    <title>Nap zárás</title>
+    <title>Adóügyi ellenőrző egység adatai</title>
   </head>
   <body>
-    <h1>Pénztárjelentés</h1>
-    <form method="post" action="CashReport" enctype="multipart/form-data">
-      <div><button>Pénztárjelentés</button></div>
+    <h1>Adóügyi ellenőrző egység adatai</h1>
+    <form method="post" action="/AeeDataReport" enctype="multipart/form-data">
+      <div><button>Nyomtatás</button></div>
       <input type="hidden" name="SessionId"/>
-      <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
-      <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
     </form>
     <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>

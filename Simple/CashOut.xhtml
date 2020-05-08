@@ -11,16 +11,24 @@
     <h1>Pénz ki</h1>
     <form method="post" action="CashOut" enctype="multipart/form-data">
       <div>
-        <select name="Payments[RowIndex].PaymentMediaIndex" default="0">
+        <input placeholder="Összeg" type="text" name="Payments[0].Amount"/>
+        <select name="Payments[0].PaymentMediaIndex" default="0">
           <option value="0"> Készpénz Ft</option>
           <option value="1"> Készpénz €</option>
         </select>
-      </div>
-      <input placeholder="Összeg" type="text" name="cashout_amount"/>
-      <div>
-        <select name="Payments[RowIndex].PaymentMediaIndex" default="0">
-          <option value="0"> Nyersanyag vásárlás</option>
-          <option value="1"> ?</option>
+        <input placeholder="Kifizetés oka" type="text" name="Payments[0].Info"/>
+        <select name="CashOutType" default="0">
+          <option value="0">Fölözés</option>
+          <option value="1">Pénztáros levétel</option>
+          <option value="2">Utalvány kivét</option>
+          <option value="3">Ajándékkártya kivét</option>
+          <option value="4">Bérkifizetés</option>
+          <option value="5">Munkabér előleg</option>
+          <option value="6">Postaköltség</option>
+          <option value="7">Egyéb rezsi</option>
+          <option value="8">Áruvásárlás</option>
+          <option value="9">Záróösszeg levétel</option>
+          <option value="10">Egyéb kifizetés</option>
         </select>
       </div>
       <div>
@@ -30,7 +38,7 @@
       <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
       <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
     </form>
-    <div><button onclick="Back()">Mégsem</button></div>
+    <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>
   </body>
 </html>

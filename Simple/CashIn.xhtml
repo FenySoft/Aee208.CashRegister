@@ -10,15 +10,13 @@
   <body>
     <h1>Pénz be</h1>
     <form method="post" action="CashIn" enctype="multipart/form-data">
-      <div><input placeholder="Összeg" type="text" name="Payments[0].Amount"/></div>
       <div>
+        <input placeholder="Összeg" type="text" name="Payments[0].Amount"/>
         <select name="Payments[0].PaymentMediaIndex" default="0">
           <option value="0"> Készpénz Ft</option>
           <option value="1"> Készpénz €</option>
         </select>
-      </div>
-      <div><input placeholder="Beizetés oka" type="text" name="Payments[0].Info"/></div>
-      <div>
+        <input placeholder="Beizetés oka" type="text" name="Payments[0].Info"/>
         <select name="CashInType" default="0">
           <option value="0">váltópénz bevitel</option>
           <option value="1">pénztáros pénzfelvétel</option>
@@ -38,7 +36,7 @@
       <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
     </form>
     <div>
-      <button onclick="Back()">Mégsem</button>
+      <button onclick="Back()">Vissza</button>
     </div>
     <script>SessionIdToForm();</script>
   </body>

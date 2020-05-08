@@ -9,15 +9,15 @@
   </head>
   <body>
     <h1>Bejelentkezés</h1>
-    <form method="post" action="ServiceMode" enctype="multipart/form-data">
+    <form method="post" action="/ServiceMode" enctype="multipart/form-data">
       <div>
-        <li>PIN: <input type="password" name="PIN"/></li>
+        <li>PIN: <input type="password" name="Pin"/></li>
         <li>Műszerész tanúsítvány betöltése: <input type="file" accept=".cer" name="UserCertificate"/></li>
       </div>
       <div><button>Bejelentkezés</button></div>
       <input type="hidden" name="SessionId"/>
     </form>
-    <div><button onclick="Back()">Mégsem</button></div>
+    <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>
   </body>
 </html>

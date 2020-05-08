@@ -9,11 +9,11 @@
   </head>
   <body>
     <h1>Leállítás</h1>
-    <form method="post" action="Shutdown" enctype="multipart/form-data">
+    <form method="post" action="/Shutdown" enctype="multipart/form-data">
       <div><button>Leállítás</button></div>
       <input type="hidden" name="SessionId"/>
     </form>
-    <div><button onclick="Back()">Mégsem</button></div>
+    <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>
   </body>
 </html>

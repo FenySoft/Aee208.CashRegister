@@ -5,15 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <script src="/aee.js"></script>
-    <title>Nap zárás</title>
+    <title>Euró üzemmód beállítása</title>
   </head>
   <body>
-    <h1>Pénztárjelentés</h1>
-    <form method="post" action="CashReport" enctype="multipart/form-data">
-      <div><button>Pénztárjelentés</button></div>
+    <h1>Euró üzemmód beállítása</h1>
+    <form method="post" action="DailyOpen" enctype="multipart/form-data">
+      <div><button>Euró üzemmód</button></div>
       <input type="hidden" name="SessionId"/>
-      <input type="hidden" name="DocumentGeneral.Barcode" value="auto"/>
-      <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
     </form>
     <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>
