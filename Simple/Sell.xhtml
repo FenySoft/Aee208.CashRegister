@@ -10,25 +10,20 @@
   <body>
     <h1>Értékesítés</h1>
     <form method="post" action="SellItem" enctype="multipart/form-data">
+      <div><input placeholder="Megjegyzés előtte : " type="text" name="BeforePlainText"/></div>
       <div>
-        <input placeholder="Termék megnevezése : " type="text" name="cashin_amount"/>
-        <input placeholder="Cikkszám : " type="text" name="cashin_amount"/>
-        <input placeholder="Mennyiség : " type="text" name="cashin_amount"/>
-        <input placeholder="Bruttó egységár : " type="text" name="cashin_amount"/>
-        <input placeholder="Megjegyzés előtte : " type="text" name="cashin_amount"/>
-        <input placeholder="Megjegyzés utána : " type="text" name="cashin_amount"/>
-        <input placeholder="ÁFA kulcs : " type="text" name="cashin_amount"/>
-        <input placeholder="Mennyiségi egy. : " type="text" name="cashin_amount"/>
-        <input placeholder="Bruttó eladási ár : " type="text" name="cashin_amount"/>
+        <input placeholder="Termék megnevezése : " type="text" name="ProductName"/>
+        <input placeholder="Cikkszám : " type="text" name="ProductCode"/>
+        <input placeholder="Mennyiség : " type="text" name="Qty"/>
+        <input placeholder="Bruttó egységár : " type="text" name="Gup"/>
+        <input placeholder="ÁFA kulcs : " type="text" name="VatCode"/>
+        <input placeholder="Mennyiségi egy. : " type="text" name="UnitName"/>
       </div>
+      <div><input placeholder="Megjegyzés utána : " type="text" name="AfterPlainText"/></div>
       <div><button>Nyugta készpénz</button></div>
       <input type="hidden" name="SessionId"/>
-      <input type="hidden" name="LazyId"/>
     </form>
     <div><button onclick="Back()">Vissza</button></div>
-    <script>
-      SessionIdToForm();
-      LazyIdToForm();
-    </script>
+    <script>SessionIdToForm();</script>
   </body>
 </html>
