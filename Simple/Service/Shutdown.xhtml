@@ -10,6 +10,8 @@
   <body>
     <h1>Leállítás</h1>
     <form method="post" action="/Shutdown" enctype="multipart/form-data">
+      <div><input placeholder="PIN" type="password" name="Pin"/></div>
+      <div><input placeholder="Műszerész igazolvány" type="file" accept=".cer" name="UserCertificate"/></div>
       <div><button>Leállítás</button></div>
       <input type="hidden" name="SessionId"/>
     </form>

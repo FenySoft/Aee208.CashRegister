@@ -9,18 +9,29 @@
   </head>
   <body>
     <h1>Értékesítés</h1>
-    <form method="post" action="SellItem" enctype="multipart/form-data">
+    <form method="post" action="/SellItem" enctype="multipart/form-data">
       <div><input placeholder="Megjegyzés előtte : " type="text" name="BeforePlainText"/></div>
       <div>
-        <input placeholder="Termék megnevezése : " type="text" name="ProductName"/>
         <input placeholder="Cikkszám : " type="text" name="ProductCode"/>
+        <input placeholder="Termék megnevezése : " type="text" name="ProductName"/>
         <input placeholder="Mennyiség : " type="text" name="Qty"/>
-        <input placeholder="Bruttó egységár : " type="text" name="Gup"/>
-        <input placeholder="ÁFA kulcs : " type="text" name="VatCode"/>
         <input placeholder="Mennyiségi egy. : " type="text" name="UnitName"/>
+        <input placeholder="Bruttó egységár : " type="text" name="Gup"/>
+        <select name="VatCode" default="C00">
+          <option value="A00">A00</option>
+          <option value="B00">B00</option>
+          <option value="C00" selected="">C00</option>
+          <option value="D00">D00</option>
+          <option value="E00">C00</option>
+        </select>
+        <button class="button" type="submit">+</button>
       </div>
       <div><input placeholder="Megjegyzés utána : " type="text" name="AfterPlainText"/></div>
-      <div><button>Nyugta készpénz</button></div>
+      <div><button class="button" type="submit" formaction="/SubTotal">Részösszesen</button></div>
+      <div><button class="button" type="submit" formaction="/Total">Összesen</button></div>
+      <div><button class="button" type="submit" formaction="/LazyToReceipt">Nyugta</button></div>
+      <div><button class="button" type="submit" formaction="/Pay.xhtml">Fizet</button></div>
+      <input type="hidden" name="LazyGroup" value="1"/>
       <input type="hidden" name="SessionId"/>
     </form>
     <div><button onclick="Back()">Vissza</button></div>

@@ -10,10 +10,8 @@
   <body>
     <h1>Bejelentkezés</h1>
     <form method="post" action="/ServiceMode" enctype="multipart/form-data">
-      <div>
-        <li>PIN: <input type="password" name="Pin"/></li>
-        <li>Műszerész tanúsítvány betöltése: <input type="file" accept=".cer" name="UserCertificate"/></li>
-      </div>
+      <div><input placeholder="PIN" type="password" name="Pin"/></div>
+      <div><input placeholder="Műszerész igazolvány" type="file" accept=".cer" name="UserCertificate"/></div>
       <div><button>Bejelentkezés</button></div>
       <input type="hidden" name="SessionId"/>
     </form>

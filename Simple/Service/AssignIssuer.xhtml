@@ -10,6 +10,10 @@
   <body>
     <h1>Élesítés</h1>
     <form method="post" action="/AssignIssuer" enctype="multipart/form-data">
+      <div><input placeholder="AP szám" type="text" name="ApNumber"/></div>
+      <div><input placeholder="Megszemélyesítési kód" type="text" name="ActivationCode"/></div>
+      <div><input placeholder="Trademark (opcionális)" type="text" name="Trademark"/></div>
+      <div><input placeholder="Terminál kód (opcionális)" type="text" name="TerminalCode"/></div>
       <div><button>Élesítés</button></div>
       <input type="hidden" name="SessionId"/>
     </form>

@@ -5,10 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <script src="/aee.js"></script>
-    <title>Beállítások</title>
+    <title>Kijelentkezés</title>
   </head>
   <body>
-    <h1>Beállítások</h1>
-    <div><button onclick="Back()">Vissza</button></div>
+    <h1>Kijelentkezés</h1>
+    <form method="post" action="/Logout" enctype="multipart/form-data">
+      <div><button>Kijelentkezés</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div>
+      <button onclick="Back()">Vissza</button>
+    </div>
   </body>
 </html>
