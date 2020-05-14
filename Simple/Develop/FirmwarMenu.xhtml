@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <script src="/Develop/Develop.js"></script>
+    <title>Fejlesztői firmware Menü</title>
+  </head>
+  <body>
+    <h1>Fejlesztői firmware Menü</h1>
+    <form method="post" action="/FirmwareDownload" enctype="multipart/form-data">
+      <div><button onclick="FirmwarDownloadMenu">Firmware lista letöltése</button></div>
+      <div id="FirmwareDownloadList"></div>
+      <div><button>Firmware letöltés</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+
+    <form method="post" action="/FirmwareSelect" enctype="multipart/form-data">
+      <div><button onclick="FirmwareSelectMenu">Firmware lista letöltése</button></div>
+      <div id="FirwareSelectList"></div>
+      <div><button>Firmware kiválasztás</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>
+      function FirmwarDownloadMenu()
+      {
+        var menu = AeeGet("FirmwarDownloadMenu");
+        var select = ArrayToSelect("FirmwareIdx", menu);
+        document.getElementById("FirmwareDownloadList").innerHTML = select;
+      }
+
+      function FirmwareSelectMenu()
+      {
+        var menu = AeeGet("FirmwareSelectMenu");
+        var select = ArrayToSelect("FirmwareIdx", menu);
+        document.getElementById("FirwareSelectList").innerHTML = select;
+      }
+    </script>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>
