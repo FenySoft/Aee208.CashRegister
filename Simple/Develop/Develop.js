@@ -1,34 +1,37 @@
-function AeeGet(AFunction)
+function DownloadMenu(AFunction, AName, ADiv)
 {
   var xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function()
   {
     if ((this.readyState == 4) && (this.status == 200))
-      return this.responseText;
+      CreateMenu(AName, ADiv, this.responseText);
   };
 
-  var sessionId = document.getElementById("SessionId").Value;
+  var sessionId = SessionIdGet();
   xhttp.open("POST", "/" + AFunction, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.setRequestHeader("Accept", "application/json");
   xhttp.send("SessionId=" + sessionId);
 }
 
-function ArrayToSelect(AName, AArray)
+function CreateMenu(AName, ADiv, AResponseText)
 {
   //Create and append select list
   var selectList = document.createElement("select");
   //selectList.id = AName;
-  selectList.name = AName
-  myParent.appendChild(selectList);
+  selectList.name = AName;
+  var response = JSON.parse(AResponseText);
+  var menus = response.Result;
 
   //Create and append the options
-  for (var i = 0; i < AArray.length; i++) {
+  for (var i = 0; i < menus.length; i++)
+  {
     var option = document.createElement("option");
     option.value = i;
-    option.text = AArray[i];
+    option.text = menus[i];
     selectList.appendChild(option);
   }
-  
-  return selectList;
+
+  document.getElementById(ADiv).innerHTML = selectList.outerHTML;
 }

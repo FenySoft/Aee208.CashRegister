@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <title>Joker 2020 - IP beállítás</title>
+  </head>
+  <body>
+    <h1>Joker 2020 - IP beállítás</h1>
+    <form method="post" action="/IpConfig" enctype="multipart/form-data">
+      <div><input placeholder="Name" type="text" name="Name" value="{Name}"/></div>
+      <div><input placeholder="IP address" type="text" name="IpAddress" value="{IpAddress}"/></div>
+      <div><input placeholder="Subnet mask" type="text" name="SubnetMask" value="{SubnetMask}"/></div>
+      <div><input placeholder="Gateway" type="text" name="Gateway" value="{Gateway}"/></div>
+      <div><button>IP beállítás</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>
