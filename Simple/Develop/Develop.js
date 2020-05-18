@@ -21,6 +21,7 @@ function CreateMenu(AName, ADiv, AResponseText)
   var selectList = document.createElement("select");
   //selectList.id = AName;
   selectList.name = AName;
+  console.log(AResponseText);
   var response = JSON.parse(AResponseText);
   var menus = response.Result;
 
