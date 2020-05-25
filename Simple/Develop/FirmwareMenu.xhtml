@@ -13,13 +13,13 @@
 
     <form method="post" action="/FirmwareDownload" enctype="multipart/form-data">
       <div><button type="submit" formaction="/Service/IpConfig.xhtml">IP beállítás</button></div>
-      <input type="hidden" id="SessionId" name="SessionId"/>
       <div><button type="button" onclick="DownloadMenu('FirmwarDownloadMenu', 'DownloadIndex', 'FirmwareDownloadList')">Firmware lista a Com-Passz szerverről</button></div>
       <div id="FirmwareDownloadList"></div>
       <div><button>Firmware letöltés</button></div>
       <div><button type="button" onclick="DownloadMenu('FirmwareSelectMenu', 'SelectedIndex', 'FirwareSelectList')">Letöltött firmware lista frissítése</button></div>
       <div id="FirwareSelectList"></div>
       <div><button class="button" type="submit" formaction="/FirmwareSelect">Firmware kiválasztás</button></div>
+      <input type="hidden" id="SessionId" name="SessionId"/>
     </form>
 
     <div><button onclick="Back()">Vissza</button></div>

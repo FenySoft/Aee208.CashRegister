@@ -12,8 +12,8 @@
     <form method="post" action="/DailyOpen" enctype="multipart/form-data">
       <div>
         <input placeholder="Nyitó összeg" type="text" name="Payments[0].Amount"/>
-        <select name="Payments[0].PaymentMediaIndex" default="0">
-          <option value="0">Készpénz Ft</option>
+        <select name="Payments[0].PaymentMediaIndex">
+          <option value="0" selected="selected">Készpénz Ft</option>
           <option value="1">Készpénz €</option>
         </select>
       </div>

@@ -37,14 +37,14 @@
       <input type="hidden" name="SessionId"/>
     </form>
     <form method="post" action="/LazyToReceipt" enctype="multipart/form-data">
-      <div><button class="button" type="submit" formaction="/LazyToReceipt">Nyugta - Készpénz</button></div>
-      <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="0"/>
+      <div><button class="button" type="submit">Nyugta - Készpénz</button></div>
+      <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="{CashIndex}"/>
       <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
       <input type="hidden" name="SessionId"/>
     </form>
     <form method="post" action="/LazyToReceipt" enctype="multipart/form-data">
-      <div><button class="button" type="submit" formaction="/LazyToReceipt">Nyugta - Bankkártya</button></div>
-      <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="2"/>
+      <div><button class="button" type="submit">Nyugta - Bankkártya</button></div>
+      <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="{BankCardIndex}}"/>
       <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
       <input type="hidden" name="SessionId"/>
     </form>
