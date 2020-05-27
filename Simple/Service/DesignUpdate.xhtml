@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <title>Felhasználói felület módosítás</title>
+  </head>
+  <body>
+    <form method="post" action="/DesignUpdate" enctype="multipart/form-data">
+      <div>PIN: <input type="password" name="Pin"/></div>
+      <div>Műszerész tanúsítvány: <input type="file" accept=".cer" name="UserCertificate"/></div>
+      <div>Új felhasználói felület (zip fájl): <input type="file" accept=".zip" name="DesignZip"/></div>
+      <div><button>Módosítás</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>

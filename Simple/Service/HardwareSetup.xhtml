@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <title>Hardver beállítás</title>
+  </head>
+  <body>
+    <h1>Joker 2020 - Hardver beállítás</h1>
+
+    <form method="post" action="/HardwareSetup" enctype="multipart/form-data">
+      <div>
+        <h2>Vevőkijelző</h2>
+        <div>
+          <select name="CustomerDisplay.Type">
+            <option value="0">Com-Passz Digital 4x20</option>
+            <option value="1">Com-Passz Serial 4x20</option>
+            <option value="2">Posiflex PD2300</option>
+            <option value="3">Bixolon BCD-1000</option>
+            <option value="4">Hisense VC220</option>
+            <option value="5">Emke</option>
+          </select>
+        </div>
+        <div>
+          <select name="CustomerDisplay.Baudrate">
+            <option value="0">9 600</option>
+            <option value="1">19 200</option>
+            <option value="2">38 400</option>
+            <option value="3">57 600</option>
+            <option value="4">115 200</option>
+          </select>
+        </div>
+        <div>
+          <select name="CustomerDisplay.CodePage">
+            <option value="0">IBM852</option>
+            <option value="1">windows-1250</option>
+            <option value="2">windows-1252</option>
+            <option value="3">utf-8</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <h2>Nyomtató</h2>
+        <div>
+          <select name="Printer.Type">
+            <option value="0">Com-Passz 57</option>
+            <option value="1">Com-Passz 80</option>
+            <option value="2">SAM4S ELLIX20 II</option>
+            <option value="3">Bixolon SRP-350</option>
+            <option value="4">IBM 4610-1NR</option>
+            <option value="5">NCR 7197</option>
+            <option value="5">Citizen</option>
+            <option value="5">Zonerich AB-88H</option>
+            <option value="5">Xprinter</option>
+          </select>
+        </div>
+        <div>
+          <select name="Printer.Baudrate">
+            <option value="0">9 600</option>
+            <option value="1">19 200</option>
+            <option value="2">38 400</option>
+            <option value="3">57 600</option>
+            <option value="4">115 200</option>
+          </select>
+        </div>
+        <div>
+          <select name="Printer.CodePage">
+            <option value="0">IBM852</option>
+            <option value="1">windows-1250</option>
+            <option value="2">windows-1252</option>
+            <option value="3">utf-8</option>
+          </select>
+        </div>
+      </div>
+      <div><button class="button" type="submit">Módosítás</button></div>
+      <input type="hidden" id="SessionId" name="SessionId"/>
+    </form>
+
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>
