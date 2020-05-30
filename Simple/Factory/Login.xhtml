@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <title>Bejelentkezés</title>
+  </head>
+  <body>
+    <h1>Bejelentkezés</h1>
+    <form method="post" action="/ServiceMode" enctype="multipart/form-data">
+      <div><input placeholder="PIN" type="password" name="Pin"/></div>
+      <div><input placeholder="Műszerész igazolvány" type="file" accept=".cer" name="UserCertificate"/></div>
+      <div><button>Bejelentkezés</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>

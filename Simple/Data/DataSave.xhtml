@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <title>Adatok mentése</title>
+  </head>
+  <body>
+    <h1>Pénz be</h1>
+    <form method="post" action="/ExportXmlToUsb" enctype="multipart/form-data">
+      <input placeholder="Első naplófájl" type="text" name="JournalId"/>
+      <input placeholder="Darab (1-100-ig)" type="text" name="Count"/>
+      <div><button class="button" type="submit" formaction="/GetXml">PC-re</button></div>
+      <div><button class="button" type="submit">USB-re</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>
