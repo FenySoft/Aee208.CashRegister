@@ -39,18 +39,18 @@
     <form method="post" action="/LazyToReturn" enctype="multipart/form-data">
       <div><button class="button" type="submit">Nyugta - Készpénz</button></div>
       <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="{CashIndex}"/>
-      <input type="hidden" name="DocumentGeneral.CopyCount" value="2"/>
+      <input type="hidden" name="CopyCount" value="2"/>
       <input type="hidden" name="SessionId"/>
     </form>
     <form method="post" action="/LazyToreturn" enctype="multipart/form-data">
       <div><button class="button" type="submit">Nyugta - Bankkártya</button></div>
       <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="{BankCardIndex}}"/>
-      <input type="hidden" name="DocumentGeneral.CopyCount" value="2"/>
+      <input type="hidden" name="CopyCount" value="2"/>
       <input type="hidden" name="SessionId"/>
     </form>
     <form method="post" action="/Break" enctype="multipart/form-data">
       <div><button class="button" type="submit">Megszakítás</button></div>
-      <input type="hidden" name="DocumentGeneral.CopyCount" value="1"/>
+      <input type="hidden" name="CopyCount" value="1"/>
       <input type="hidden" name="BreakMethod" value="1"/>
       <input type="hidden" name="SessionId"/>
       <input type="hidden" name="NextPage" value="Sell.xhtml"/>

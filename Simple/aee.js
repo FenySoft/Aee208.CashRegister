@@ -14,7 +14,7 @@ function DailyOpen(ACash)
   var sessionId = document.getElementById("SessionId").Value;
   xhttp.open("POST", "DailyOpen", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("SessionId=" + sessionId + "&DocumentGeneral.Barcode=auto&DocumentGeneral.CopyCount=1&Payments[0].Amount=" + ACash + "&Payments[0].PaymentMediaIndex=0&Payments[0].Info=Befizetés");
+  xhttp.send("SessionId=" + sessionId + "&Barcode=auto&CopyCount=1&Payments[0].Amount=" + ACash + "&Payments[0].PaymentMediaIndex=0&Payments[0].Info=Befizetés");
 }
 
 function CashReport()
@@ -33,7 +33,7 @@ function CashReport()
   var sessionId = document.getElementById("SessionId").Value;
   xhttp.open("POST", "CashReport", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("SessionId=" + sessionId + "&DocumentGeneral.Barcode=auto&DocumentGeneral.CopyCount=1");
+  xhttp.send("SessionId=" + sessionId + "&Barcode=auto&CopyCount=1");
 }
     
 function DailyClose()
@@ -52,5 +52,5 @@ function DailyClose()
   var sessionId = document.getElementById("SessionId").Value;
   xhttp.open("POST", "DailyClose", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("SessionId=" + sessionId + "&DocumentGeneral.Barcode=auto&DocumentGeneral.CopyCount=1");
+  xhttp.send("SessionId=" + sessionId + "&Barcode=auto&CopyCount=1");
 }
