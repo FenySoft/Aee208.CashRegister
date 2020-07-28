@@ -11,14 +11,14 @@
     <h1>Fizetés</h1>
     <form method="post" action="/LazyToReceipt" enctype="multipart/form-data">
       <div><button class="button" type="submit">Nyugta - Készpénz</button></div>
-      <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="{CashIndex}"/>
+      <input type="hidden" name="Payments[0].PaymentMediaIndex" value="{CashIndex}"/>
       <input type="hidden" name="CopyCount" value="1"/>
       <input type="hidden" name="SessionId"/>
       <input type="hidden" name="NextPage" value="Sell.xhtml"/>
     </form>
     <form method="post" action="/LazyToReceipt" enctype="multipart/form-data">
       <div><button class="button" type="submit">Nyugta - Bankkártya</button></div>
-      <input type="hidden" name="Pay.Payments[0].PaymentMediaIndex" value="{BankCardIndex}"/>
+      <input type="hidden" name="Payments[0].PaymentMediaIndex" value="{BankCardIndex}"/>
       <input type="hidden" name="CopyCount" value="1"/>
       <input type="hidden" name="SessionId"/>
       <input type="hidden" name="NextPage" value="PayCard.xhtml"/>
