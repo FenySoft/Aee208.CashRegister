@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script src="/Joker2020.js"></script>
+    <title>Árfolyamok beállítása</title>
+  </head>
+  <body>
+    <h1>Árfolyamok beállítása</h1>
+    <form method="post" action="/SetExchangeRates" enctype="multipart/form-data">
+      <div>
+        Forint árfolyam:
+        <input type="hidden" name="ExchangeRates[0].DevizaIdx" value="0"/>
+        <input placeholder="NAV altipus: " type="text" name="ExchangeRates[0].ExchangeRate" value="1"/>
+      </div>
+      <div>
+        Euró árfolyam:
+        <input type="hidden" name="ExchangeRates[1].DevizaIdx" value="1"/>
+        <input placeholder="NAV altipus: " type="text" name="ExchangeRates[1].ExchangeRate" value="278.88"/>
+      </div>
+      <div><button>Mentés</button></div>
+      <input type="hidden" name="SessionId"/>
+    </form>
+    <div><button onclick="Back()">Vissza</button></div>
+    <script>SessionIdToForm();</script>
+  </body>
+</html>
