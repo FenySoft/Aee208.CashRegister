@@ -23,6 +23,36 @@
       <input type="hidden" name="SessionId"/>
       <input type="hidden" name="NextPage" value="PayCard.xhtml"/>
     </form>
+    <br/>
+    <form method="post" action="/LazyToReceipt" enctype="multipart/form-data">
+      <div>
+        <input placeholder="összeg" type="text"  name="Payments[0].Amount"/>
+        <select name="Payments[0].PaymentMediaIndex">
+          <option value="-1"></option>
+          <option value="0">Készpénz Ft</option>
+          <option value="1">Készpénz €</option>
+          <option value="2">Bankkártya</option>
+          <option value="3">Egyéb</option>
+        </select>
+      </div>
+      <div>
+        <input placeholder="összeg" type="text"  name="Payments[1].Amount"/>
+        <select name="Payments[1].PaymentMediaIndex">
+          <option value="-1"></option>
+          <option value="0">Készpénz Ft</option>
+          <option value="1">Készpénz €</option>
+          <option value="2">Bankkártya</option>
+          <option value="3">Egyéb</option>
+        </select>
+      </div>
+      <div><input placeholder="Kerekítés" type="text"  name="RoundValue"/></div>
+      <div><input placeholder="Visszajáró" type="text"  name="Change"/></div>
+      <div><button class="button" type="submit">Nyugta - vegyes fizetés</button></div>
+      <input type="hidden" name="CopyCount" value="1"/>
+      <input type="hidden" name="SessionId"/>
+      <input type="hidden" name="NextPage" value="PayCard.xhtml"/>
+    </form>
+    <br/>
     <div><button onclick="Back()">Vissza</button></div>
     <script>SessionIdToForm();</script>
   </body>
